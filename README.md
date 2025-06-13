@@ -2,12 +2,6 @@
 
 This is my personal portfolio website built using **Next.js**, **Tailwind CSS**, and **Framer Motion**. It showcases my work in full-stack web development, mobile app engineering, and AI/ML projects — along with achievements in competitive programming and hackathons.
 
-## 🌟 Highlights
-
-- 🏆 **BitBox 5.0 Winner** — SahYatri: a real-time public transport analytics app  
-- 📱 Built a **Flutter-based timetable app** for college students with API integration  
-- 🧠 Active in **competitive programming**, AI/ML, and tech hackathons
-
 ## 🛠️ Tech Stack
 
 - **Next.js** with App Router  
@@ -28,21 +22,6 @@ This is my personal portfolio website built using **Next.js**, **Tailwind CSS**,
 - Sticky navbar with smooth scroll and active section highlighting  
 - Dark mode toggle with theme persistence
 
-## 📂 Folder Structure
-
-```
-
-/app
-/about
-/projects
-/contact
-/components
-/public
-/styles
-/utils
-
-```
-
 ## 📸 Preview
 
 Website Link: [aman1067.xyz](https://www.aman1067.xyz/)
@@ -51,7 +30,3 @@ Website Link: [aman1067.xyz](https://www.aman1067.xyz/)
 
 This project is open for learning and inspiration. All rights reserved © Aman Verma.
 ```
-
----
-
-Let me know if you want this README to include deployment instructions (e.g., for Vercel), contribution notes, or preview GIFs!
