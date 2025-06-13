@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   keywords: ["Full Stack", "developer", "react", "nextjs", "portfolio"],
   authors: [{ name: "Aman Verma" }],
   viewport: "width=device-width, initial-scale=1",
-  generator: "v0.dev",
+  generator: "Next.js",
 }
 
 export default function RootLayout({
