@@ -60,6 +60,7 @@ export default function Hero() {
                     "Full Stack Developer 💻",
                     "AI/ML Enthusiast 🤖",
                     "Flutter Developer 📱",
+                    "Competitive Programmer ⚔️ ",
                   ]}
                   loop={0}
                   cursor
@@ -76,9 +77,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 1.2 }}
                 className="max-w-lg mx-auto lg:mx-0 text-lg leading-relaxed text-slate-600 dark:text-slate-400"
               >
-                I build fast, responsive web and mobile experiences using modern
-                technologies with a passion for clean design, smooth animations,
-                and real-world performance.
+                I build high-performance web and mobile apps that combine elegant design, seamless UX, and real-world scalability—driven by code and creativity.
               </motion.p>
             </div>
 

@@ -14,11 +14,11 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Portfolio - Aman Verma",
-  description: "Frontend Developer Portfolio - Aman Verma",
-  keywords: ["frontend", "developer", "react", "nextjs", "portfolio"],
+  description: "Full Stack Developer Portfolio - Aman Verma",
+  keywords: ["Full Stack", "developer", "react", "nextjs", "portfolio"],
   authors: [{ name: "Aman Verma" }],
   viewport: "width=device-width, initial-scale=1",
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
 export default function RootLayout({
@@ -28,6 +28,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+        {/* Optional other icon types */}
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      </head>
       <body className={poppins.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange={false}>
           <LoadingScreen />

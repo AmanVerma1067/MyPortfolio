@@ -3,18 +3,18 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
-import { Award, Code, Brain, Smartphone, GraduationCap, Trophy, Lightbulb } from "lucide-react"
+import { Award, Code, Brain, Smartphone, GraduationCap, Trophy, Lightbulb, SwordsIcon } from "lucide-react"
 
 const highlights = [
-  {
-    icon: Award,
-    title: "Award Winner",
-    description: "SahYatri Project Recognition",
-  },
   {
     icon: Code,
     title: "Full-Stack Developer",
     description: "End-to-end Development",
+  },
+  {
+    icon: SwordsIcon,
+    title: "Competitive Programmer",
+    description: "DSA in C++ | Codeforces & CodeChef",
   },
   {
     icon: Brain,
@@ -54,14 +54,11 @@ export default function About() {
 
             <div className="space-y-6 text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
               <p className="text-lg">
-                I'm a passionate full-stack developer with a strong academic foundation in computer science and a deep
-                interest in artificial intelligence and machine learning. My expertise spans web development, mobile
-                applications, and AI-driven solutions.
+                I'm a passionate full-stack developer with a strong academic foundation in computer science, and a deep interest in artificial intelligence and machine learning. Alongside building scalable web and mobile applications, I actively engage in competitive programming and solve algorithmic challenges using C++.
               </p>
               <p>
                 My award-winning project <span className="text-blue-500 dark:text-blue-400 font-medium">SahYatri</span>{" "}
-                demonstrates my ability to create innovative solutions that bridge technology and real-world
-                applications. I thrive on building scalable applications that make a meaningful impact.
+                reflects my ability to build impactful, real-world tech solutions—blending intelligent systems with intuitive user experiences. I thrive on solving complex problems, whether it's through elegant UI or optimized algorithms.
               </p>
             </div>
 
@@ -132,7 +129,7 @@ export default function About() {
                     </p>
                     <div className="flex items-center">
                       <span className="text-sm font-medium text-slate-900 dark:text-slate-100">CGPA:</span>
-                      <span className="ml-2 text-sm text-blue-500 dark:text-blue-400 font-semibold">9.2 (latest)</span>
+                      <span className="ml-2 text-sm text-blue-500 dark:text-blue-400 font-semibold">8.5 (latest)</span>
                     </div>
                   </div>
                 </motion.div>
@@ -153,19 +150,19 @@ export default function About() {
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 rounded-full bg-blue-500 dark:bg-blue-400 mt-2 mr-3 flex-shrink-0"></div>
                       <p className="text-sm text-slate-700 dark:text-slate-300">
-                        Winner @ BitBox 5.0 Hackathon for SahYatri
+                         🏆 BitBox 5.0 Winner – SahYatri (real-time transport analytics)
                       </p>
                     </li>
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 rounded-full bg-blue-500 dark:bg-blue-400 mt-2 mr-3 flex-shrink-0"></div>
                       <p className="text-sm text-slate-700 dark:text-slate-300">
-                        Built real-time transport analytics app
+                        📱 Flutter timetable app for class tracking via API
                       </p>
                     </li>
                     <li className="flex items-start">
                       <div className="w-1.5 h-1.5 rounded-full bg-blue-500 dark:bg-blue-400 mt-2 mr-3 flex-shrink-0"></div>
                       <p className="text-sm text-slate-700 dark:text-slate-300">
-                        Active in tech competitions and projects
+                        🧠 Active in CP, AI/ML, and hackathons
                       </p>
                     </li>
                   </ul>
@@ -183,6 +180,9 @@ export default function About() {
                   </div>
 
                   <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-blue-500/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-300 rounded-full text-xs font-medium backdrop-blur-sm">
+                      Data Structures & Algorithms (C++)
+                    </span>
                     <span className="px-3 py-1 bg-blue-500/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-300 rounded-full text-xs font-medium backdrop-blur-sm">
                       Full Stack Development
                     </span>

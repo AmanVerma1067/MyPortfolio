@@ -8,57 +8,25 @@ import Image from "next/image"
 
 const projectCategories = ["All", "Web", "App", "AI/ML"]
 
-// ✅ Projects Array
 const projects = [
   {
-    image: "/images/tasky.png",
+    image: "/images/tt.png",
     category: ["App"],
-    title: "Tasky - Productivity App",
-    description: "Minimal task management Flutter app with offline sync.",
-    tags: ["Flutter", "Hive", "Firebase"],
-    githubUrl: "https://github.com/AmanVerma1067/tasky",
-    apkUrl: "/apk/tasky.apk",
-    date: "2025-05-28",
+    title: "StudySync - TimeTable App",
+    description: "Timetable manager app for college students",
+    tags: ["Flutter", "MongoDB", "Express", "Cors"],
+    githubUrl: "https://github.com/AmanVerma1067/StudySync",
+    apkUrl: "https://drive.google.com/file/d/17fqezd_qbW-wuDVBJecI7gnQAuIDmpi3/view",
   },
   {
-    image: "/images/yatri.png",
+    image: "/images/yatri.jpeg",
     category: ["App", "AI/ML"],
     title: "SahYatri - Smart Bus Assistant",
     description: "Real-time bus occupancy tracking app with AI alerts.",
-    tags: ["Flutter", "REST API", "Notifications"],
-    githubUrl: "https://github.com/AmanVerma1067",
-    previewUrl: "https://youtu.be/sahyatri-demo",
-    date: "2025-04-10",
-  },
-  {
-    image: "/images/ecom.png",
-    category: ["Web"],
-    title: "E-commerce Platform",
-    description: "Modern e-commerce solution with React and Node.js.",
-    tags: ["React", "Node.js", "MongoDB"],
-    githubUrl: "https://github.com/AmanVerma1067",
-    liveUrl: "https://example.com",
-    date: "2024-12-15",
-  },
-  {
-    image: "/images/portfolio.png",
-    category: ["Web"],
-    title: "Portfolio Website",
-    description: "Responsive portfolio with modern animations.",
-    tags: ["Next.js", "Tailwind", "Framer Motion"],
-    githubUrl: "https://github.com/AmanVerma1067",
-    liveUrl: "https://example.com",
-    date: "2024-10-05",
-  },
-  {
-    image: "/images/dashboard.png",
-    category: ["Web"],
-    title: "Dashboard Analytics",
-    description: "Real-time analytics dashboard with D3.js",
-    tags: ["Vue.js", "D3.js", "Express"],
-    githubUrl: "https://github.com/AmanVerma1067",
-    liveUrl: "https://example.com",
-    date: "2024-08-10",
+    tags: ["Flutter", "Next.js", "PostgreSQL", "OpenCV"],
+    githubUrl: "https://github.com/AmanVerma1067/SahYatri",
+    previewUrl: "https://www.youtube.com/watch?v=ESh_J48Pc3w&feature=youtu.be",
+    devfolioUrl: "https://devfolio.co/projects/sahyatri-3ca7",
   },
   {
     image: "/images/ocr.png",
@@ -68,7 +36,6 @@ const projects = [
     tags: ["PyTorch", "OpenCV", "FastAPI"],
     githubUrl: "https://github.com/AmanVerma1067",
     liveUrl: "",
-    date: "2024-06-22",
   },
 ]
 
@@ -77,19 +44,20 @@ export default function Projects() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [activeCategory, setActiveCategory] = useState("All")
 
-  // ✅ Filtered and Sorted Projects
-  const filteredProjects = projects
-    .filter((project) =>
-      activeCategory === "All"
-        ? true
-        : Array.isArray(project.category)
-        ? project.category.includes(activeCategory)
-        : project.category === activeCategory
-    )
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  const filteredProjects = projects.filter((project) =>
+    activeCategory === "All"
+      ? true
+      : Array.isArray(project.category)
+      ? project.category.includes(activeCategory)
+      : project.category === activeCategory
+  )
 
   return (
-    <section id="projects" className="bg-slate-50 dark:bg-slate-800 py-20 transition-colors duration-300" ref={ref}>
+    <section
+      id="projects"
+      className="bg-slate-50 dark:bg-slate-800 py-20 transition-colors duration-300"
+      ref={ref}
+    >
       <div className="container mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -140,13 +108,14 @@ export default function Projects() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               <div className="p-6 space-y-4">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-medium text-blue-500 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-3 py-1 rounded-full">
-                    {Array.isArray(project.category) ? project.category.join(", ") : project.category}
+                    {Array.isArray(project.category)
+                      ? project.category.join(", ")
+                      : project.category}
                   </span>
                 </div>
 
@@ -154,7 +123,9 @@ export default function Projects() {
                   {project.title}
                 </h3>
 
-                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{project.description}</p>
+                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                  {project.description}
+                </p>
 
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
@@ -168,50 +139,64 @@ export default function Projects() {
                 </div>
 
                 {/* Links */}
-                <div className="flex space-x-4 pt-4">
+                <div className="flex flex-wrap gap-4 pt-4 items-center">
                   {project.githubUrl && (
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center space-x-2 text-slate-600 dark:text-slate-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+                      className="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
                     >
                       <Github size={18} />
                       <span className="text-sm font-medium">Code</span>
                     </a>
                   )}
-                  {project.liveUrl ? (
+                  {project.liveUrl && (
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center space-x-2 text-slate-600 dark:text-slate-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+                      className="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
                     >
                       <ExternalLink size={18} />
                       <span className="text-sm font-medium">Live Demo</span>
                     </a>
-                  ) : project.apkUrl ? (
+                  )}
+                  {project.apkUrl && (
                     <a
                       href={project.apkUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center space-x-2 text-slate-600 dark:text-slate-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+                      className="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
                     >
                       <ExternalLink size={18} />
                       <span className="text-sm font-medium">Download APK</span>
                     </a>
-                  ) : project.previewUrl ? (
+                  )}
+                  {project.previewUrl && (
                     <a
                       href={project.previewUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center space-x-2 text-slate-600 dark:text-slate-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+                      className="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
                     >
                       <ExternalLink size={18} />
                       <span className="text-sm font-medium">Preview</span>
                     </a>
-                  ) : (
+                  )}
+                  { (
                     <span className="text-slate-400 text-sm italic">No demo available</span>
+                  )}
+                  {project.devfolioUrl && (
+                    <a
+                      href={project.devfolioUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+                    >
+                      <ExternalLink size={18} />
+                      <span className="text-sm font-medium">Devfolio</span>
+                    </a>
                   )}
                 </div>
               </div>
