@@ -184,9 +184,6 @@ export default function Projects() {
                       <span className="text-sm font-medium">Preview</span>
                     </a>
                   )}
-                  { (
-                    <span className="text-slate-400 text-sm italic">No demo available</span>
-                  )}
                   {project.devfolioUrl && (
                     <a
                       href={project.devfolioUrl}
