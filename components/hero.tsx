@@ -1,14 +1,36 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Youtube, Linkedin } from "lucide-react";
+import { Github, Youtube, Linkedin, ExternalLink } from "lucide-react";
 import { Typewriter } from "react-simple-typewriter";
+
+// Devfolio icon
+const DevfolioIcon = ({ size = 20 }: { size?: number }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 60.3 66.2"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M60.3 36.4C60.3 52 48.6 64.7 33.8 66c0 0-19.1 0.5-25.4-0.1c-2.4-0.3-4.4-1.8-5.3-4c0.9 0.4 1.8 0.7 2.8 0.8C8 62.9 11.5 63 16.4 63c7.2 0 15.1-0.2 15.1-0.2h0.1c7.9-0.7 15.2-4.3 20.4-10.2c4.5-5 7.4-11.3 8.2-17.9C60.3 35.2 60.3 35.8 60.3 36.4z"
+      fill="#3770FF"
+    />
+    <path
+      d="M58 30c0 15.6-11.7 28.3-26.6 29.5c0 0-19.1 0.5-25.4-0.1c-3.4-0.3-5.9-3.5-6-7.1l0.1-45c0.1-3.6 2.7-6.8 6.1-7.1c6.3-0.5 25.4 0.1 25.4 0.1C46.4 1.6 58 14.4 58 30z"
+      fill="#3770FF"
+    />
+  </svg>
+);
 
 const socialLinks = [
   { href: "https://github.com/AmanVerma1067", icon: Github },
   { href: "http://www.youtube.com/@AmanVerma1067yt", icon: Youtube },
   { href: "https://www.linkedin.com/in/amanverma1067/", icon: Linkedin },
+  { href: "https://devfolio.co/@Aman1067", icon: DevfolioIcon }, // Devfolio
 ];
+
 
 export default function Hero() {
   const handleContactClick = () => {
