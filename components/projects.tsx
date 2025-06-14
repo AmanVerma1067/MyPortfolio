@@ -16,7 +16,7 @@ const projects = [
     description: "Timetable manager app for college students",
     tags: ["Flutter", "MongoDB", "Express", "Cors"],
     githubUrl: "https://github.com/AmanVerma1067/StudySync",
-    apkUrl: "https://drive.google.com/file/d/17fqezd_qbW-wuDVBJecI7gnQAuIDmpi3/view",
+    apkUrl: "https://github.com/AmanVerma1067/StudySync/releases/tag/v1.0.0",
   },
   {
     image: "/images/yatri.jpeg",

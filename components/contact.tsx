@@ -25,7 +25,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Location",
-    value: "Noida, India",
+    value: "Noida, Uttar Pradesh, India",
     href: "https://www.google.com/maps/place/Noida",
   },
 ]
