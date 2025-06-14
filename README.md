@@ -29,4 +29,3 @@ Website Link: [aman1067.xyz](https://www.aman1067.xyz/)
 ## 🧾 License
 
 This project is open for learning and inspiration. All rights reserved © Aman Verma.
-```
