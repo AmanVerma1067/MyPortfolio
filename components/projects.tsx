@@ -1,19 +1,37 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef, useState } from "react"
-import { ExternalLink, Github } from "lucide-react"
-import Image from "next/image"
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { ExternalLink, Github } from "lucide-react";
+import Image from "next/image";
 
-const projectCategories = ["All", "Web", "App", "AI/ML"]
+const projectCategories = ["All", "Web", "App", "AI/ML"];
 
 const projects = [
+  {
+    image: "/images/chess.png",
+    category: ["AI/ML", "Web"],
+    title: "Chessify AI",
+    description:
+      "A full-stack chess bot web app featuring Minimax AI, legal move hints, smooth animations, and a robust Flask backend.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Flask",
+      "python-chess",
+      "Minimax",
+      "REST API",
+    ],
+    githubUrl: "https://github.com/AmanVerma1067/Chessify-AI-Web",
+    liveUrl: "https://chessify.aman1067.xyz/",
+  },
   {
     image: "/images/tt.png",
     category: ["App"],
     title: "StudySync - TimeTable App",
-    description: "Timetable manager app for college students",
+    description:
+      "A visually appealing Flutter timetable app that helps students efficiently manage and track their class schedules.",
     tags: ["Flutter", "MongoDB", "Express", "Cors"],
     githubUrl: "https://github.com/AmanVerma1067/StudySync",
     apkUrl: "https://github.com/AmanVerma1067/StudySync/releases/tag/v1.0.0",
@@ -22,27 +40,29 @@ const projects = [
     image: "/images/yatri.jpeg",
     category: ["App", "AI/ML"],
     title: "SahYatri - Smart Bus Assistant",
-    description: "Real-time bus occupancy tracking app with AI alerts.",
+    description:
+      "An intelligent public transport analytics platform offering real-time bus occupancy tracking and AI-powered alerts.",
     tags: ["Flutter", "Next.js", "PostgreSQL", "OpenCV"],
     githubUrl: "https://github.com/AmanVerma1067/SahYatri",
     previewUrl: "https://www.youtube.com/watch?v=ESh_J48Pc3w&feature=youtu.be",
     devfolioUrl: "https://devfolio.co/projects/sahyatri-3ca7",
   },
-  {
-    image: "/images/ocr.png",
-    category: ["AI/ML"],
-    title: "OCR Document Processor",
-    description: "Intelligent document processing using OCR and ML.",
-    tags: ["PyTorch", "OpenCV", "FastAPI"],
-    githubUrl: "https://github.com/AmanVerma1067",
-    liveUrl: "",
-  },
-]
+  // {
+  //   image: "/images/ocr.png",
+  //   category: ["AI/ML"],
+  //   title: "OCR Document Processor",
+  //   description:
+  //     "A smart document processing tool leveraging OCR and machine learning for automated data extraction.",
+  //   tags: ["PyTorch", "OpenCV", "FastAPI"],
+  //   githubUrl: "https://github.com/AmanVerma1067",
+  //   liveUrl: "",
+  // },
+];
 
 export default function Projects() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const [activeCategory, setActiveCategory] = useState("All")
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [activeCategory, setActiveCategory] = useState("All");
 
   const filteredProjects = projects.filter((project) =>
     activeCategory === "All"
@@ -50,7 +70,7 @@ export default function Projects() {
       : Array.isArray(project.category)
       ? project.category.includes(activeCategory)
       : project.category === activeCategory
-  )
+  );
 
   return (
     <section
@@ -202,5 +222,5 @@ export default function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }
