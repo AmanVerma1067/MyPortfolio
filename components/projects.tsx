@@ -23,7 +23,7 @@ const projects = [
       "Minimax",
       "REST API",
     ],
-    githubUrl: "https://github.com/AmanVerma1067/Chessify-AI-Web",
+    githubUrl: "https://github.com/AmanVerma1067/Chessify-WebApp",
     liveUrl: "https://chessify.aman1067.xyz/",
   },
   {
