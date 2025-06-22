@@ -14,7 +14,7 @@ const skillCategories = [
       { name: "C++", level: 90, icon: "💻" },
       { name: "Python", level: 95, icon: "🐍" },     
       { name: "JavaScript", level: 77, icon: "🟨" },
-      { name: "TypeScript", level: 65, icon: "🔷" },
+      { name: "Dart", level: 65, icon: "🔷" },
     ],
   },
   {
