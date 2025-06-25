@@ -31,10 +31,10 @@ const projects = [
     category: ["App"],
     title: "StudySync - TimeTable App",
     description:
-      "A visually appealing Flutter timetable app that helps students efficiently manage and track their class schedules.",
+      "A visually appealing Flutter timetable and calender app that helps students efficiently track their class schedules and college events.",
     tags: ["Flutter", "MongoDB", "Express", "Cors"],
     githubUrl: "https://github.com/AmanVerma1067/StudySync",
-    apkUrl: "https://github.com/AmanVerma1067/StudySync/releases/tag/v1.0.0",
+    apkUrl: "https://github.com/AmanVerma1067/StudySync/releases/tag/v2.0.0",
   },
   {
     image: "/images/yatri.jpeg",
