@@ -35,7 +35,7 @@ const projects = [
       "A visually appealing Flutter timetable and calender app that helps students efficiently track their class schedules and college events.",
     tags: ["Flutter", "MongoDB", "Express", "Cors"],
     githubUrl: "https://github.com/AmanVerma1067/StudySync",
-    apkUrl: "https://github.com/AmanVerma1067/StudySync/releases/tag/v2.0.0",
+    apkUrl: "https://github.com/AmanVerma1067/StudySync/releases/tag/v3.0.0",
   },
   {
     image: "/images/yatri.jpeg",
