@@ -49,7 +49,7 @@
     "framer-motion": "^12.17.0",
     "input-otp": "1.4.1",
     "lucide-react": "^0.454.0",
-    "next": "14.2.35",
+    "next": "^16.2.10",
     "next-themes": "latest",
     "react": "^18",
     "react-day-picker": "8.10.1",
@@ -67,6 +67,8 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@frontman-ai/nextjs": "^1.0.1",
+    "@opentelemetry/sdk-node": "^0.220.0",
     "@types/node": "^22",
     "@types/react": "^18",
     "@types/react-dom": "^18",

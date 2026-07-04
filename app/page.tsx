@@ -7,6 +7,7 @@ import About from "@/components/about"
 import Skills from "@/components/skills"
 import Services from "@/components/services"
 import Projects from "@/components/projects"
+import Experience from "@/components/experience"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import ScrollUp from "@/components/scroll-up"
@@ -25,6 +26,7 @@ export default function Home() {
         <About />
         <Skills />
         <Services />
+        <Experience />
         <Projects />
         <Contact />
       </main>

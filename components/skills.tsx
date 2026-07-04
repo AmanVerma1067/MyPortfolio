@@ -3,15 +3,47 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
-import { Code, Globe, Brain, Server, Database } from "lucide-react"
+import { Code, Globe, Brain, Server, Database, BookOpen } from "lucide-react"
+import { 
+  SiCplusplus, SiPython, SiPhp, SiJavascript, SiTypescript, 
+  SiReact, SiNextdotjs, SiFlutter, SiStreamlit, SiTailwindcss, SiHtml5, SiCss3,
+  SiNodedotjs, SiExpress, SiFlask, SiFastapi,
+  SiMongodb, SiPostgresql, SiMysql, SiAmazon, SiDocker, SiGit, SiLinux, SiPostman, SiPytorch, SiTensorflow
+} from "react-icons/si"
+import { VscAzure } from "react-icons/vsc"
+import { FaJava, FaCuttlefish, FaBrain, FaNetworkWired, FaServer, FaLock } from "react-icons/fa"
+import { BiNetworkChart, BiCodeAlt } from "react-icons/bi"
+import { TbApi, TbBrandOauth } from "react-icons/tb"
 
 const skillCategories = [
   {
     icon: Code,
-    title: "Core Languages",
+    title: "Languages",
     color: "from-cyan-400 to-blue-500",
     glowColor: "rgba(56,189,248,0.25)",
-    skills: ["C/C++", "Python", "JavaScript", "TypeScript", "Dart", "PHP"],
+    skills: [
+      { name: "C", icon: FaCuttlefish },
+      { name: "C++", icon: SiCplusplus },
+      { name: "Python", icon: SiPython },
+      { name: "PHP", icon: SiPhp },
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "SQL", icon: Database },
+    ],
+  },
+  {
+    icon: BookOpen,
+    title: "Core CS",
+    color: "from-blue-400 to-indigo-500",
+    glowColor: "rgba(99,102,241,0.25)",
+    skills: [
+      { name: "Data Structures & Algorithms", icon: BiCodeAlt },
+      { name: "Operating Systems", icon: FaServer },
+      { name: "DBMS", icon: Database },
+      { name: "OOP", icon: Code },
+      { name: "Computer Networks", icon: FaNetworkWired },
+      { name: "System Design", icon: BiNetworkChart },
+    ],
   },
   {
     icon: Brain,
@@ -19,13 +51,14 @@ const skillCategories = [
     color: "from-violet-500 to-purple-600",
     glowColor: "rgba(139,92,246,0.25)",
     skills: [
-      "Generative AI",
-      "RAG",
-      "LangChain",
-      "Hugging Face",
-      "Machine Learning",
-      "Deep Learning",
-      "NLP",
+      { name: "Machine Learning", icon: FaBrain },
+      { name: "NLP", icon: Brain },
+      { name: "Deep Learning", icon: FaBrain },
+      { name: "LangChain", icon: Code },
+      { name: "Hugging Face", icon: Brain },
+      { name: "RAG", icon: Database },
+      { name: "PyTorch", icon: SiPytorch },
+      { name: "TensorFlow", icon: SiTensorflow },
     ],
   },
   {
@@ -33,14 +66,30 @@ const skillCategories = [
     title: "Frontend / Mobile",
     color: "from-emerald-400 to-teal-500",
     glowColor: "rgba(52,211,153,0.25)",
-    skills: ["Flutter", "React", "Next.js", "HTML5", "CSS3", "Tailwind CSS"],
+    skills: [
+      { name: "React.js", icon: SiReact },
+      { name: "Next.js", icon: SiNextdotjs },
+      { name: "Flutter", icon: SiFlutter },
+      { name: "Streamlit", icon: SiStreamlit },
+      { name: "Tailwind CSS", icon: SiTailwindcss },
+      { name: "HTML5", icon: SiHtml5 },
+      { name: "CSS3", icon: SiCss3 },
+    ],
   },
   {
     icon: Server,
     title: "Backend / APIs",
     color: "from-orange-400 to-amber-500",
     glowColor: "rgba(251,146,60,0.25)",
-    skills: ["Node.js", "Express", "Flask", "FastAPI", "RESTful API", "WebSocket"],
+    skills: [
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "Express.js", icon: SiExpress },
+      { name: "Flask", icon: SiFlask },
+      { name: "FastAPI", icon: SiFastapi },
+      { name: "REST APIs", icon: TbApi },
+      { name: "WebSocket", icon: BiNetworkChart },
+      { name: "JWT Authentication", icon: FaLock },
+    ],
   },
   {
     icon: Database,
@@ -48,16 +97,16 @@ const skillCategories = [
     color: "from-rose-400 to-pink-500",
     glowColor: "rgba(251,113,133,0.25)",
     skills: [
-      "MongoDB",
-      "MySQL",
-      "PostgreSQL",
-      "AWS",
-      "Azure",
-      "Supabase",
-      "Docker",
-      "Git",
-      "CI/CD",
-      "Ngrok",
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "MySQL", icon: SiMysql },
+      { name: "AWS", icon: SiAmazon },
+      { name: "Azure", icon: VscAzure },
+      { name: "Docker", icon: SiDocker },
+      { name: "Git", icon: SiGit },
+      { name: "Linux", icon: SiLinux },
+      { name: "CI/CD", icon: Code },
+      { name: "Postman", icon: SiPostman },
     ],
   },
 ]
@@ -73,28 +122,29 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="bg-slate-50 dark:bg-slate-800 py-24 transition-colors duration-300"
+      className="section-shell surface-section-alt"
       ref={ref}
     >
-      <div className="container mx-auto px-6">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
+      <div className="absolute left-1/2 top-20 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
+      <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
           transition={{ duration: 1 }}
           className="text-center mb-16"
         >
-          <h3 className="text-sm text-slate-600 dark:text-slate-400 mb-2">
-            Technical <span className="text-blue-500 dark:text-blue-400">Expertise</span>
-          </h3>
-          <h2 className="text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-slate-100 mb-6">
+          <p className="section-kicker">
+            Technical Expertise
+          </p>
+          <h2 className="section-title mb-6">
             Skills & Technologies
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          <p className="section-subtitle">
             A comprehensive toolkit spanning AI/ML, full-stack development, and cloud infrastructure.
           </p>
         </motion.div>
 
-        {/* Changed lg:grid-cols-3 to lg:grid-cols-6 to allow fractional spans */}
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-6 mb-12">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
@@ -102,12 +152,8 @@ export default function Skills() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
-              className={`relative bg-white dark:bg-slate-700/60 backdrop-blur-sm p-6 rounded-2xl border border-slate-200/60 dark:border-slate-600/40 hover:border-transparent transition-all duration-500 group hover:shadow-xl ${
-                // Boxes 1-3 span 2 cols (3 per row), Boxes 4-5 span 3 cols (2 per row) on LG screens
-                categoryIndex < 3 ? "lg:col-span-2" : "lg:col-span-3"
-                } ${
-                // Box 5 spans 2 columns on MD screens to center it on the 3rd row
-                categoryIndex === 4 ? "md:col-span-2" : "md:col-span-1"
+              className={`glass-card group relative p-6 hover:-translate-y-2 hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/10 ${
+                categoryIndex < 3 ? "lg:col-span-2" : "lg:col-span-2"
                 }`}
             >
               {/* Hover glow */}
@@ -131,26 +177,28 @@ export default function Skills() {
               {/* Skill Tags */}
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, skillIndex) => (
-                  <motion.span
-                    key={skill}
+                  <motion.div
+                    key={skill.name}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                     transition={{
                       duration: 0.4,
                       delay: 0.3 + categoryIndex * 0.08 + skillIndex * 0.04,
                     }}
-                    className="px-3 py-1.5 text-sm font-medium rounded-lg bg-slate-100 dark:bg-slate-600/50 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-500/30 hover:border-transparent hover:text-white hover:shadow-md transition-all duration-300 cursor-default"
+                    className="flex cursor-default items-center gap-1.5 rounded-xl border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-700 transition-all duration-300 hover:border-transparent hover:text-white hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:text-slate-200 group/skill"
                     style={
                       {
                         "--tw-gradient-from": category.color.includes("cyan")
                           ? "#22d3ee"
-                          : category.color.includes("violet")
-                            ? "#8b5cf6"
-                            : category.color.includes("emerald")
-                              ? "#34d399"
-                              : category.color.includes("orange")
-                                ? "#fb923c"
-                                : "#fb7185",
+                          : category.color.includes("blue")
+                            ? "#60a5fa"
+                            : category.color.includes("violet")
+                              ? "#8b5cf6"
+                              : category.color.includes("emerald")
+                                ? "#34d399"
+                                : category.color.includes("orange")
+                                  ? "#fb923c"
+                                  : "#fb7185",
                       } as React.CSSProperties
                     }
                     onMouseEnter={(e) => {
@@ -163,6 +211,8 @@ export default function Skills() {
                           const colorMap: Record<string, string> = {
                             "cyan-400": "#22d3ee",
                             "blue-500": "#3b82f6",
+                            "blue-400": "#60a5fa",
+                            "indigo-500": "#6366f1",
                             "violet-500": "#8b5cf6",
                             "purple-600": "#9333ea",
                             "emerald-400": "#34d399",
@@ -183,8 +233,9 @@ export default function Skills() {
                       el.style.boxShadow = ""
                     }}
                   >
-                    {skill}
-                  </motion.span>
+                    <skill.icon className="w-4 h-4 text-slate-500 dark:text-slate-400 group-hover/skill:text-white transition-colors" />
+                    <span>{skill.name}</span>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
@@ -199,7 +250,7 @@ export default function Skills() {
         >
           <button
             onClick={handleProjectsClick}
-            className="bg-blue-500 hover:bg-blue-600 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 transform hover:-translate-y-1"
+            className="primary-btn"
           >
             View My Projects
           </button>

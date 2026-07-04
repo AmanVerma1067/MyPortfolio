@@ -10,100 +10,32 @@ const projectCategories = ["All", "AI/ML", "Web", "App"];
 
 const projects = [
   {
-    image: "/images/tt.png",
-    category: ["App"],
-    title: "StudySync - TimeTable App",
-    description:
-      "A visually appealing Flutter timetable and calendar app that helps students efficiently track their class schedules and college events.",
-    tags: ["Flutter", "MongoDB", "Express", "Cors"],
-    githubUrl: "https://github.com/AmanVerma1067/StudySync",
-    apkUrl:
-      "https://github.com/AmanVerma1067/StudySync/releases/tag/v3.0.0",
-  },
-  {
     image: "/images/chess.png",
     category: ["AI/ML", "Web"],
-    title: "Chessify AI",
+    title: "Chessify AI - Intelligent Chess Platform",
     description:
-      "Full-featured chess app with AI opponent (Minimax + Stockfish) and real-time PvP multiplayer via WebSockets. Features live chat, spectator mode, game timers, and drag-and-drop interaction.",
-    tags: [
-      "Next.js",
-      "TypeScript",
-      "Flask",
-      "Stockfish",
-      "Socket.IO",
-      "WebSocket",
-    ],
+      "Real-time multiplayer chess platform supporting 100+ concurrent users with live board sync, server-side move validation, and spectator mode. Integrated a Flask AI backend with the Stockfish engine (ELO 1800), a Polyglot opening book, and a custom Minimax + alpha-beta pruning engine (depth 3).",
+    tags: ["Next.js", "Node.js", "Socket.IO", "Flask"],
     githubUrl: "https://github.com/AmanVerma1067/Chessify-WebApp",
     liveUrl: "https://chessify.aman1067.xyz/",
-    previewUrl: "https://www.youtube.com/watch?v=kzqac5qWbYQ",
+  },
+  {
+    image: "/images/tt.png",
+    category: ["App"],
+    title: "StudySync - Smart Timetable & Calendar App",
+    description:
+      "Cross-platform timetable app with offline-first architecture via local caching and auto-sync for 100% network outage accessibility. Architected REST APIs with an authenticated admin panel for centralized management and sub-second real-time updates.",
+    tags: ["Flutter", "MongoDB", "Express"],
+    githubUrl: "https://github.com/AmanVerma1067/StudySync",
   },
   {
     image: "/images/yatri.jpeg",
     category: ["App", "AI/ML"],
-    title: "SahYatri - Smart Bus Assistant",
+    title: "SahYatri - Public Transport Analytics",
     description:
-      "An intelligent public transport analytics platform offering real-time bus occupancy tracking and AI-powered alerts.",
-    tags: ["Flutter", "Next.js", "PostgreSQL", "OpenCV"],
+      "Smart public transport analytics system. Deployed a fine-tuned YOLOv5n model on Raspberry Pi 4 at 15 FPS, achieving 90%+ detection accuracy for passenger counting. Established a time-series backend streaming live data to a React dashboard and Flutter commuter app.",
+    tags: ["IoT", "YOLOv5", "Node.js", "PostgreSQL", "React", "Flutter"],
     githubUrl: "https://github.com/AmanVerma1067/SahYatri",
-    previewUrl:
-      "https://www.youtube.com/watch?v=ESh_J48Pc3w&feature=youtu.be",
-    devfolioUrl: "https://devfolio.co/projects/sahyatri-3ca7",
-  },
-  {
-    image: "/images/neuro.png",
-    category: ["AI/ML"],
-    title: "NeuroMath",
-    description:
-      "AI-powered handwritten math solver using a PyTorch CNN that recognizes digits and operators drawn on a digital canvas, achieving 98.6% validation accuracy.",
-    tags: ["PyTorch", "Flask", "OpenCV", "Deep Learning", "Canvas API"],
-    githubUrl: "https://github.com/AmanVerma1067/NeuroMath",
-  },
-  {
-    image: "/images/nva.png",
-    category: ["AI/ML", "Web"],
-    title: "Nutri-Vision AI",
-    description:
-      "AI-powered nutrition tracker with food image recognition, voice-to-text logging, health-aware alerts, and goal-based dietary recommendations. Built with Next.js & Supabase.",
-    tags: ["Next.js", "Supabase", "AI", "Voice Recognition", "Health Tech"],
-    githubUrl: "https://github.com/AmanVerma1067/nva",
-  },
-  {
-    image: "/images/drive.png",
-    category: ["AI/ML"],
-    title: "DriveSure",
-    description:
-      "Pay-As-You-Drive insurance risk scoring system that evaluates real-time telematics data to predict crash/claim risk and generate a 0–100 safety score via REST API.",
-    tags: ["Python", "Machine Learning", "REST API", "Telematics", "Risk Modeling"],
-    githubUrl: "https://github.com/AmanVerma1067/DriveSureModel",
-  },
-  {
-    image: "/images/ml.png",
-    category: ["AI/ML"],
-    title: "Student Performance ML",
-    description:
-      "End-to-end ML pipeline predicting student math scores based on demographic and academic features. Deployed on Azure with Docker, CI/CD, and a Flask web frontend.",
-    tags: ["Python", "Flask", "Docker", "Azure", "Scikit-learn", "CI/CD"],
-    githubUrl: "https://github.com/AmanVerma1067/Student_Performance-ML-Azure-Deployment",
-    liveUrl: "https://student-ml-app.onrender.com",
-  },
-  {
-    image: "/images/nvat.png",
-    category: ["AI/ML"],
-    title: "Nutri-Vision Text Analyzer",
-    description:
-      "NLP system that transforms natural food descriptions into detailed nutritional data using spaCy NER, USDA API integration, and a FastAPI + Streamlit interface.",
-    tags: ["FastAPI", "spaCy", "NLP", "Streamlit", "USDA API"],
-    githubUrl: "https://github.com/Nutri-Vision/Model_Text-Voice",
-  },
-  {
-    image: "/images/interview.png",
-    category: ["AI/ML", "Web"],
-    title: "AI-Driven Interview System",
-    description:
-      "Full-stack AI interview platform featuring automated PDF resume parsing, AI-generated technical questions via Hugging Face, and a secure Docker-based code execution sandbox with proctoring and performance analytics.",
-    tags: ["React", "FastAPI", "Docker", "Hugging Face", "PostgreSQL", "Microservices"],
-    githubUrl: "https://github.com/Minor-2-0/Recruitai",
   }
 ];
 
@@ -123,10 +55,12 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="bg-slate-50 dark:bg-slate-800 py-20 transition-colors duration-300"
+      className="section-shell surface-section-alt"
       ref={ref}
     >
-      <div className="container mx-auto px-6">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
+      <div className="absolute -right-24 top-28 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
+      <div className="section-container">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
@@ -134,10 +68,10 @@ export default function Projects() {
           transition={{ duration: 1 }}
           className="text-center mb-16"
         >
-          <h3 className="text-sm text-slate-600 dark:text-slate-400 mb-2">
-            My <span className="text-blue-500 dark:text-blue-400">Work</span>
-          </h3>
-          <h2 className="text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-slate-100 mb-8">
+          <p className="section-kicker">
+            My Work
+          </p>
+          <h2 className="section-title mb-8">
             Recent Projects
           </h2>
 
@@ -148,8 +82,8 @@ export default function Projects() {
                 key={category}
                 onClick={() => setActiveCategory(category)}
                 className={`px-6 py-2.5 rounded-full font-medium transition-all duration-300 text-sm ${activeCategory === category
-                  ? "bg-blue-500 text-white shadow-lg shadow-blue-500/25"
-                  : "bg-white dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-600 border border-slate-200/60 dark:border-slate-600/40"
+                  ? "bg-blue-600 text-white shadow-lg shadow-blue-600/25"
+                  : "border border-slate-200 bg-white/80 text-slate-600 hover:border-blue-500/30 hover:text-blue-600 dark:border-white/10 dark:bg-slate-900/70 dark:text-slate-300 dark:hover:text-blue-300"
                   }`}
               >
                 {category}
@@ -166,7 +100,7 @@ export default function Projects() {
               initial={{ opacity: 0, y: 60, scale: 0.9 }}
               animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="group bg-white dark:bg-slate-700/70 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-slate-200/40 dark:border-slate-600/30"
+              className="glass-card group overflow-hidden hover:-translate-y-2 hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/10"
             >
               <div className="relative h-48 overflow-hidden bg-slate-100 dark:bg-slate-600">
                 <Image
@@ -200,7 +134,7 @@ export default function Projects() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-600 px-2.5 py-1 rounded-md"
+                      className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-600 dark:bg-white/5 dark:text-slate-300"
                     >
                       {tag}
                     </span>

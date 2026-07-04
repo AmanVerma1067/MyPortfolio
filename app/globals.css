@@ -57,3 +57,41 @@
     background-color: theme("colors.slate.400");
   }
 }
+
+@layer components {
+  .section-shell {
+    @apply relative overflow-hidden py-24 transition-colors duration-300;
+  }
+
+  .section-container {
+    @apply container relative mx-auto px-6;
+  }
+
+  .section-kicker {
+    @apply mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-blue-500 dark:text-blue-400;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold tracking-tight text-slate-950 dark:text-white lg:text-5xl;
+  }
+
+  .section-subtitle {
+    @apply mx-auto max-w-2xl text-slate-600 dark:text-slate-400;
+  }
+
+  .glass-card {
+    @apply rounded-2xl border border-slate-200 bg-white/80 shadow-sm backdrop-blur-xl transition-all duration-300 dark:border-white/10 dark:bg-slate-900/70;
+  }
+
+  .primary-btn {
+    @apply rounded-2xl bg-blue-600 px-8 py-4 font-semibold text-white shadow-lg shadow-blue-600/20 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700;
+  }
+
+  .surface-section {
+    @apply bg-white dark:bg-slate-900;
+  }
+
+  .surface-section-alt {
+    @apply bg-slate-50 dark:bg-slate-950;
+  }
+}

@@ -62,23 +62,24 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 transition-colors duration-300"
+      className="section-shell bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.10),transparent_28%),linear-gradient(135deg,#f8fafc_0%,#ffffff_45%,#eef2ff_100%)] dark:bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.10),transparent_30%),linear-gradient(135deg,#0f172a_0%,#020617_55%,#0f172a_100%)]"
       ref={ref}
     >
-      <div className="container mx-auto px-6">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
+      <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
           transition={{ duration: 1 }}
           className="text-center mb-16"
         >
-          <h3 className="text-sm text-slate-600 dark:text-slate-400 mb-2">
-            Get In <span className="text-blue-500 dark:text-blue-400">Touch</span>
-          </h3>
-          <h2 className="text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-slate-100 mb-4">
+          <p className="section-kicker">
+            Get In Touch
+          </p>
+          <h2 className="section-title mb-4">
             Contact Me
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          <p className="section-subtitle">
             Have a project in mind? Let's discuss how we can work together to bring your ideas to life.
           </p>
         </motion.div>
@@ -111,7 +112,7 @@ export default function Contact() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                  className="flex items-center space-x-5 p-5 rounded-xl bg-white dark:bg-slate-800/60 backdrop-blur-md shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-slate-50 dark:hover:bg-slate-700"
+                  className="glass-card group flex items-center space-x-5 p-5 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-xl hover:shadow-blue-500/10"
                 >
                   <div className="p-3 bg-blue-500 text-white rounded-full shadow-md group-hover:scale-110 transition-transform">
                     <info.icon size={22} />
@@ -130,7 +131,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: 60 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 60 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="bg-white dark:bg-slate-800/70 p-8 rounded-2xl shadow-lg"
+            className="glass-card p-8 shadow-2xl shadow-slate-900/10 dark:shadow-black/20"
           >
             <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
@@ -141,7 +142,7 @@ export default function Contact() {
                     name="user_name"
                     required
                     placeholder="Your name"
-                    className="w-full px-4 py-3 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 rounded-lg border border-slate-200 dark:border-slate-600 focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none transition-colors placeholder-slate-400 dark:placeholder-slate-500"
+                    className="w-full rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-slate-900 outline-none transition-colors placeholder-slate-400 focus:border-blue-500 dark:border-white/10 dark:bg-slate-950/40 dark:text-slate-100 dark:placeholder-slate-500 dark:focus:border-blue-400"
                   />
                 </div>
                 <div className="space-y-2">
@@ -151,7 +152,7 @@ export default function Contact() {
                     name="user_email"
                     required
                     placeholder="your.email@example.com"
-                    className="w-full px-4 py-3 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 rounded-lg border border-slate-200 dark:border-slate-600 focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none transition-colors placeholder-slate-400 dark:placeholder-slate-500"
+                    className="w-full rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-slate-900 outline-none transition-colors placeholder-slate-400 focus:border-blue-500 dark:border-white/10 dark:bg-slate-950/40 dark:text-slate-100 dark:placeholder-slate-500 dark:focus:border-blue-400"
                   />
                 </div>
               </div>
@@ -162,7 +163,7 @@ export default function Contact() {
                   type="text"
                   name="subject"
                   placeholder="Project discussion"
-                  className="w-full px-4 py-3 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 rounded-lg border border-slate-200 dark:border-slate-600 focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none transition-colors placeholder-slate-400 dark:placeholder-slate-500"
+                  className="w-full rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-slate-900 outline-none transition-colors placeholder-slate-400 focus:border-blue-500 dark:border-white/10 dark:bg-slate-950/40 dark:text-slate-100 dark:placeholder-slate-500 dark:focus:border-blue-400"
                 />
               </div>
 
@@ -173,14 +174,14 @@ export default function Contact() {
                   required
                   placeholder="Tell me about your project..."
                   rows={6}
-                  className="w-full px-4 py-3 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 rounded-lg border border-slate-200 dark:border-slate-600 focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none transition-colors placeholder-slate-400 dark:placeholder-slate-500 resize-none"
+                  className="w-full resize-none rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-slate-900 outline-none transition-colors placeholder-slate-400 focus:border-blue-500 dark:border-white/10 dark:bg-slate-950/40 dark:text-slate-100 dark:placeholder-slate-500 dark:focus:border-blue-400"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-blue-500 hover:bg-blue-600 disabled:bg-blue-400 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 transform hover:-translate-y-1 disabled:transform-none disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                className="primary-btn flex w-full items-center justify-center space-x-2 disabled:cursor-not-allowed disabled:bg-blue-400 disabled:transform-none"
               >
                 <Send size={20} />
                 <span>{isLoading ? "Sending..." : "Send Message"}</span>

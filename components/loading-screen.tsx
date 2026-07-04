@@ -17,6 +17,7 @@ export default function LoadingScreen() {
   const [progress, setProgress] = useState(0)
   const [visibleLines, setVisibleLines] = useState<number>(0)
   const [glitchActive, setGlitchActive] = useState(false)
+  const [hexStrings, setHexStrings] = useState<string[]>([])
 
   // Glitch effect
   const triggerGlitch = useCallback(() => {
@@ -48,6 +49,11 @@ export default function LoadingScreen() {
     const glitchInterval = setInterval(triggerGlitch, 800)
 
     const minLoadTime = setTimeout(() => setProgress(100), 2200)
+
+    // Generate hex strings on client mount
+    setHexStrings(
+      [...Array(6)].map(() => `0x${Math.random().toString(16).substr(2, 8).toUpperCase()}`)
+    )
 
     return () => {
       clearInterval(interval)
@@ -85,7 +91,7 @@ export default function LoadingScreen() {
 
           {/* Floating hex decoration */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            {[...Array(6)].map((_, i) => (
+            {hexStrings.map((hex, i) => (
               <motion.div
                 key={i}
                 className="absolute text-blue-500/[0.06] text-xs font-mono whitespace-nowrap"
@@ -96,7 +102,7 @@ export default function LoadingScreen() {
                 animate={{ opacity: [0, 0.5, 0], y: [0, -20, 0] }}
                 transition={{ duration: 3 + i * 0.5, repeat: Infinity, delay: i * 0.4 }}
               >
-                {`0x${Math.random().toString(16).substr(2, 8).toUpperCase()}`}
+                {hex}
               </motion.div>
             ))}
           </div>

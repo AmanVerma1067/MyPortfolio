@@ -1,9 +1,9 @@
 "use client"
-
+ 
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
-import { Brain, Swords, Code, Smartphone } from "lucide-react"
+import { Brain, Swords, Code, Smartphone, Check, ArrowRight } from "lucide-react"
 
 const services = [
   {
@@ -69,19 +69,21 @@ export default function Services() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="services" className="py-24 bg-white dark:bg-slate-900 transition-colors duration-300" ref={ref}>
-      <div className="container mx-auto px-6">
+    <section id="services" className="section-shell surface-section" ref={ref}>
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
+      <div className="absolute -right-24 top-24 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
+      <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
           transition={{ duration: 1 }}
           className="text-center mb-16"
         >
-          <h3 className="text-sm text-slate-600 dark:text-slate-400 mb-2">
-            My <span className="text-blue-500 dark:text-blue-400">Services</span>
-          </h3>
-          <h2 className="text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-slate-100 mb-4">What I Do</h2>
-          <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          <p className="section-kicker">
+            My Services
+          </p>
+          <h2 className="section-title mb-4">What I Do</h2>
+          <p className="section-subtitle">
             From AI-powered solutions to competitive programming and full-stack engineering — I build things that matter.
           </p>
         </motion.div>
@@ -93,51 +95,68 @@ export default function Services() {
               initial={{ opacity: 0, y: 60 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
               transition={{ duration: 0.8, delay: index * 0.15 }}
-              className="group relative bg-slate-50 dark:bg-slate-800 p-8 rounded-2xl border border-slate-200/60 dark:border-slate-700/40 hover:border-transparent transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden"
+              onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
+              className="glass-card group relative overflow-hidden p-8 hover:-translate-y-2 hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/10 cursor-pointer flex flex-col justify-between min-h-[380px]"
             >
+              {/* Giant Background Number */}
+              <span className="absolute right-8 top-6 text-7xl font-mono font-black text-slate-100 dark:text-slate-800/30 group-hover:text-blue-500/5 dark:group-hover:text-blue-400/5 transition-colors duration-500 pointer-events-none select-none">
+                0{index + 1}
+              </span>
+
               {/* Subtle background gradient on hover */}
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-500`}
+                className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500 pointer-events-none`}
               />
 
-              {/* Icon */}
-              <div className="relative mb-6">
-                <div
-                  className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} ${service.hoverGradient} flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-lg`}
-                >
-                  <service.icon className="w-7 h-7 text-white" />
+              <div>
+                {/* Icon */}
+                <div className="relative mb-6 w-14 h-14">
+                  <div
+                    className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} ${service.hoverGradient} flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-lg`}
+                  >
+                    <service.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <div
+                    className={`absolute inset-0 w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} opacity-20 blur-xl transition-all duration-300 group-hover:opacity-40 pointer-events-none`}
+                  />
                 </div>
-                <div
-                  className={`absolute inset-0 w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} opacity-20 blur-xl transition-all duration-300 group-hover:opacity-40`}
-                />
+
+                {/* Content */}
+                <div className="relative space-y-4">
+                  <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors duration-300">
+                    {service.title}
+                  </h3>
+
+                  <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+                    {service.description}
+                  </p>
+
+                  {/* Feature list */}
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5 pt-4">
+                    {service.features.map((feature, featureIndex) => (
+                      <motion.li
+                        key={feature}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={isInView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 0.5, delay: index * 0.15 + featureIndex * 0.08 + 0.4 }}
+                        className="flex items-center text-xs md:text-sm text-slate-600 dark:text-slate-400"
+                      >
+                        <span className="mr-2.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 transition-all duration-300 group-hover:bg-blue-500/10 group-hover:text-blue-500 dark:group-hover:bg-blue-400/20 dark:group-hover:text-blue-400">
+                          <Check className="h-3 w-3" />
+                        </span>
+                        <span>{feature}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
-              {/* Content */}
-              <div className="relative space-y-4">
-                <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors duration-300">
-                  {service.title}
-                </h3>
-
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{service.description}</p>
-
-                {/* Feature list */}
-                <ul className="space-y-2.5 pt-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <motion.li
-                      key={feature}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                      transition={{ duration: 0.5, delay: index * 0.15 + featureIndex * 0.08 + 0.4 }}
-                      className="flex items-center text-sm text-slate-600 dark:text-slate-400"
-                    >
-                      <div
-                        className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${service.gradient} mr-3 flex-shrink-0`}
-                      />
-                      {feature}
-                    </motion.li>
-                  ))}
-                </ul>
+              {/* Bottom pointer link */}
+              <div className="flex items-center gap-1.5 pt-6 mt-6 border-t border-slate-100 dark:border-slate-800/40 text-xs font-semibold text-slate-400 dark:text-slate-500 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                <span>Start a Project</span>
+                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
               </div>
+
             </motion.article>
           ))}
         </div>
@@ -154,9 +173,9 @@ export default function Services() {
           </p>
           <button
             onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
-            className="bg-blue-500 hover:bg-blue-600 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 transform hover:-translate-y-1"
+            className="primary-btn"
           >
-            Start a Project
+            Get in Touch
           </button>
         </motion.div>
       </div>
