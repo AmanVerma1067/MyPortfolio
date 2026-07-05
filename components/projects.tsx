@@ -10,26 +10,6 @@ const projectCategories = ["All", "AI/ML", "Web", "App"];
 
 const projects = [
   {
-    image: "/images/vaultdrop.png",
-    category: ["Web"],
-    title: "VaultDrop",
-    description:
-      "Full-stack cloud storage web application inspired by Google Drive. Features serverless architecture, edge-ready SQLite database, NextAuth v5 credentials-based authentication, and CDN-backed file storage.",
-    tags: ["Next.js", "TypeScript", "Drizzle ORM", "Turso (libSQL)", "Cloudinary", "NextAuth v5"],
-    githubUrl: "https://github.com/AmanVerma1067/VaultDrop",
-    liveUrl: "https://vault-drop29.vercel.app/",
-  },
-  {
-    image: "/images/shieldchat.png",
-    category: ["Web"],
-    title: "ShieldChat",
-    description:
-      "A privacy-focused, real-time chat application implementing client-side end-to-end encryption (E2EE) using the AES-GCM algorithm. Features secure Google OAuth sign-in and real-time database listener integration.",
-    tags: ["React", "Firebase", "Web Crypto API", "AES-GCM", "Vite", "Tailwind CSS"],
-    githubUrl: "https://github.com/AmanVerma1067/ShieldChat",
-    liveUrl: "https://shield-chat29.vercel.app/",
-  },
-  {
     image: "/images/chess.png",
     category: ["AI/ML", "Web"],
     title: "Chessify AI",
@@ -61,6 +41,26 @@ const projects = [
     githubUrl: "https://github.com/AmanVerma1067/SahYatri",
     previewUrl: "https://www.youtube.com/watch?v=ESh_J48Pc3w&feature=youtu.be",
     devfolioUrl: "https://devfolio.co/projects/sahyatri-3ca7",
+  },
+  {
+    image: "/images/vaultdrop.png",
+    category: ["Web"],
+    title: "VaultDrop",
+    description:
+      "Full-stack cloud storage web application inspired by Google Drive. Features serverless architecture, edge-ready SQLite database, NextAuth v5 credentials-based authentication, and CDN-backed file storage.",
+    tags: ["Next.js", "TypeScript", "Drizzle ORM", "Turso (libSQL)", "Cloudinary", "NextAuth v5"],
+    githubUrl: "https://github.com/AmanVerma1067/VaultDrop",
+    liveUrl: "https://vault-drop29.vercel.app/",
+  },
+  {
+    image: "/images/shieldchat.png",
+    category: ["Web"],
+    title: "ShieldChat",
+    description:
+      "A privacy-focused, real-time chat application implementing client-side end-to-end encryption (E2EE) using the AES-GCM algorithm. Features secure Google OAuth sign-in and real-time database listener integration.",
+    tags: ["React", "Firebase", "Web Crypto API", "AES-GCM", "Vite", "Tailwind CSS"],
+    githubUrl: "https://github.com/AmanVerma1067/ShieldChat",
+    liveUrl: "https://shield-chat29.vercel.app/",
   },
   {
     image: "/images/neuro.png",
