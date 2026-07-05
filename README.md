@@ -24,7 +24,7 @@ This is my personal portfolio website built using **Next.js**, **Tailwind CSS**,
 
 ## 📸 Preview
 
-Website Link: [aman1067.xyz](https://www.aman1067.xyz/)
+Website Link: [aman1067.xyz](https://aman1067.vercel.app/)
 
 ## 🧾 License
 
