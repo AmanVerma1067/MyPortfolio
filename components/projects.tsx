@@ -10,14 +10,24 @@ const projectCategories = ["All", "AI/ML", "Web", "App"];
 
 const projects = [
   {
-    image: "/images/tt.png",
-    category: ["App"],
-    title: "StudySync - TimeTable App",
+    image: "/images/vaultdrop.png",
+    category: ["Web"],
+    title: "VaultDrop",
     description:
-      "A visually appealing Flutter timetable and calendar app that helps students efficiently track their class schedules and college events.",
-    tags: ["Flutter", "MongoDB", "Express", "Cors"],
-    githubUrl: "https://github.com/AmanVerma1067/StudySync",
-    apkUrl: "https://github.com/AmanVerma1067/StudySync/releases/tag/v3.0.0",
+      "Full-stack cloud storage web application inspired by Google Drive. Features serverless architecture, edge-ready SQLite database, NextAuth v5 credentials-based authentication, and CDN-backed file storage.",
+    tags: ["Next.js", "TypeScript", "Drizzle ORM", "Turso (libSQL)", "Cloudinary", "NextAuth v5"],
+    githubUrl: "https://github.com/AmanVerma1067/VaultDrop",
+    liveUrl: "https://vault-drop29.vercel.app/",
+  },
+  {
+    image: "/images/shieldchat.png",
+    category: ["Web"],
+    title: "ShieldChat",
+    description:
+      "A privacy-focused, real-time chat application implementing client-side end-to-end encryption (E2EE) using the AES-GCM algorithm. Features secure Google OAuth sign-in and real-time database listener integration.",
+    tags: ["React", "Firebase", "Web Crypto API", "AES-GCM", "Vite", "Tailwind CSS"],
+    githubUrl: "https://github.com/AmanVerma1067/ShieldChat",
+    liveUrl: "https://shield-chat29.vercel.app/",
   },
   {
     image: "/images/chess.png",
@@ -27,8 +37,19 @@ const projects = [
       "Full-featured chess app with AI opponent (Minimax + Stockfish) and real-time PvP multiplayer via WebSockets. Features live chat, spectator mode, game timers, and drag-and-drop interaction.",
     tags: ["Next.js", "TypeScript", "Flask", "Stockfish", "Socket.IO", "WebSocket"],
     githubUrl: "https://github.com/AmanVerma1067/Chessify-WebApp",
-    liveUrl: "https://chessify.aman1067.xyz/",
+    liveUrl: "https://chessify-web-app.vercel.app/",
     previewUrl: "https://www.youtube.com/watch?v=kzqac5qWbYQ",
+  },
+  {
+    image: "/images/tt.png",
+    category: ["App"],
+    title: "StudySync - TimeTable App",
+    description:
+      "A visually appealing Flutter timetable and calendar app that helps students efficiently track their class schedules and college events.",
+    tags: ["Flutter", "MongoDB", "Express", "Cors"],
+    githubUrl: "https://github.com/AmanVerma1067/StudySync",
+    liveUrl: "https://study-sync-orpin.vercel.app/",
+    apkUrl: "https://github.com/AmanVerma1067/StudySync/releases/tag/v3.0.0",
   },
   {
     image: "/images/yatri.jpeg",
