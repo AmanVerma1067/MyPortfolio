@@ -43,6 +43,26 @@ const projects = [
     devfolioUrl: "https://devfolio.co/projects/sahyatri-3ca7",
   },
   {
+    image: "/images/interview.png",
+    category: ["AI/ML", "Web"],
+    title: "AI-Driven Interview System",
+    description:
+      "Full-stack AI interview platform featuring automated PDF resume parsing, AI-generated technical questions via Hugging Face, and a secure Docker-based code execution sandbox with proctoring and performance analytics.",
+    tags: ["React", "FastAPI", "Docker", "Hugging Face", "PostgreSQL", "Microservices"],
+    githubUrl: "https://github.com/Minor-2-0/Recruitai",
+    liveUrl: "https://recrut-ai-web29.vercel.app/",
+  },
+  {
+    image: "/images/nva.png",
+    category: ["AI/ML", "Web"],
+    title: "Nutri-Vision AI",
+    description:
+      "AI-powered nutrition tracker with food image recognition, voice-to-text logging, health-aware alerts, and goal-based dietary recommendations. Built with Next.js & Supabase.",
+    tags: ["Next.js", "Supabase", "AI", "Voice Recognition", "Health Tech"],
+    githubUrl: "https://github.com/AmanVerma1067/nva",
+    liveUrl: "https://nva-jet.vercel.app/",
+  },
+  {
     image: "/images/vaultdrop.png",
     category: ["Web"],
     title: "VaultDrop",
@@ -72,15 +92,6 @@ const projects = [
     githubUrl: "https://github.com/AmanVerma1067/NeuroMath",
   },
   {
-    image: "/images/nva.png",
-    category: ["AI/ML", "Web"],
-    title: "Nutri-Vision AI",
-    description:
-      "AI-powered nutrition tracker with food image recognition, voice-to-text logging, health-aware alerts, and goal-based dietary recommendations. Built with Next.js & Supabase.",
-    tags: ["Next.js", "Supabase", "AI", "Voice Recognition", "Health Tech"],
-    githubUrl: "https://github.com/AmanVerma1067/nva",
-  },
-  {
     image: "/images/drive.png",
     category: ["AI/ML"],
     title: "DriveSure",
@@ -107,15 +118,6 @@ const projects = [
       "NLP system that transforms natural food descriptions into detailed nutritional data using spaCy NER, USDA API integration, and a FastAPI + Streamlit interface.",
     tags: ["FastAPI", "spaCy", "NLP", "Streamlit", "USDA API"],
     githubUrl: "https://github.com/Nutri-Vision/Model_Text-Voice",
-  },
-  {
-    image: "/images/interview.png",
-    category: ["AI/ML", "Web"],
-    title: "AI-Driven Interview System",
-    description:
-      "Full-stack AI interview platform featuring automated PDF resume parsing, AI-generated technical questions via Hugging Face, and a secure Docker-based code execution sandbox with proctoring and performance analytics.",
-    tags: ["React", "FastAPI", "Docker", "Hugging Face", "PostgreSQL", "Microservices"],
-    githubUrl: "https://github.com/Minor-2-0/Recruitai",
   }
 ];
 
