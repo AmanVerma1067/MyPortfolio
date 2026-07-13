@@ -83,6 +83,16 @@ const projects = [
     liveUrl: "https://shield-chat29.vercel.app/",
   },
   {
+  image: "/images/a1typing.png",
+  category: ["Web"],
+  title: "A1 Typing",
+  description:
+    "A modern typing practice web app focused on speed and accuracy improvement with a clean UI, real-time WPM/accuracy feedback, and responsive performance tracking.",
+  tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+  githubUrl: "https://github.com/AmanVerma1067/A1Typing",
+  liveUrl: "https://a1-typing29-seven.vercel.app/",
+},
+  {
     image: "/images/neuro.png",
     category: ["AI/ML"],
     title: "NeuroMath",
