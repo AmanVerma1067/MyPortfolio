@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
 import { Award, Brain, Code, GraduationCap, Smartphone, Swords, Trophy } from "lucide-react"
+import { CodolioIcon } from "./custom-icons"
 
 const highlights = [
   {
@@ -11,9 +12,10 @@ const highlights = [
     description: "LangChain, Hugging Face, NLP",
   },
   {
-    icon: Swords,
+    icon: CodolioIcon,
     title: "LeetCode Knight",
-    description: "1000+ solved · Peak 2094",
+    description: "1000+ solved · Peak 2094 · View Stats",
+    url: "https://codolio.com/profile/aman1067",
   },
   {
     icon: Code,
@@ -35,10 +37,10 @@ const achievements = [
 ]
 
 const stats = [
-  { value: "2094", label: "LeetCode Peak" },
+  { value: "2094", label: "LeetCode Peak", url: "https://codolio.com/profile/aman1067" },
   { value: "8.6", label: "B.Tech CGPA" },
   { value: "1st", label: "Hackathon Rank" },
-  { value: "1000+", label: "Problems Solved" },
+  { value: "1000+", label: "Problems Solved", url: "https://codolio.com/profile/aman1067" },
 ]
 
 export default function About() {
@@ -96,22 +98,35 @@ export default function About() {
 
             {/* Stats Cards Grid */}
             <div className="grid grid-cols-2 gap-4 max-w-md mx-auto lg:mx-0">
-              {stats.map((stat, idx) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.3 + idx * 0.1 }}
-                  className="rounded-2xl border border-slate-200/60 bg-slate-50/50 p-4 text-center dark:border-white/5 dark:bg-slate-800/30"
-                >
-                  <p className="text-2xl md:text-3xl font-black bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent dark:from-blue-400 dark:to-cyan-400">
-                    {stat.value}
-                  </p>
-                  <p className="text-xs font-semibold text-slate-500 dark:text-slate-500 mt-1 uppercase tracking-wider">
-                    {stat.label}
-                  </p>
-                </motion.div>
-              ))}
+              {stats.map((stat, idx) => {
+                const StatWrapper = stat.url ? motion.a : motion.div;
+                const statProps = stat.url
+                  ? {
+                      href: stat.url,
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                      className: "rounded-2xl border border-slate-200/60 bg-slate-50/50 p-4 text-center dark:border-white/5 dark:bg-slate-800/30 hover:-translate-y-0.5 hover:border-blue-500/30 transition-all duration-300 cursor-pointer block"
+                    }
+                  : {
+                      className: "rounded-2xl border border-slate-200/60 bg-slate-50/50 p-4 text-center dark:border-white/5 dark:bg-slate-800/30"
+                    };
+                return (
+                  <StatWrapper
+                    key={stat.label}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, delay: 0.3 + idx * 0.1 }}
+                    {...statProps}
+                  >
+                    <p className="text-2xl md:text-3xl font-black bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent dark:from-blue-400 dark:to-cyan-400">
+                      {stat.value}
+                    </p>
+                    <p className="text-xs font-semibold text-slate-500 dark:text-slate-500 mt-1 uppercase tracking-wider">
+                      {stat.label}
+                    </p>
+                  </StatWrapper>
+                );
+              })}
             </div>
 
             <div className="pt-2">
@@ -168,18 +183,28 @@ export default function About() {
                     transition={{ duration: 0.4 }}
                     className="grid grid-cols-1 sm:grid-cols-2 gap-4"
                   >
-                    {highlights.map((highlight, index) => (
-                      <div
-                        key={highlight.title}
-                        className="group relative rounded-2xl border border-slate-200/50 bg-slate-50/40 p-5 text-left transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/20 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 dark:border-white/5 dark:bg-slate-800/30 dark:hover:bg-slate-800/80"
-                      >
-                        <div className="mb-3.5 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-500 dark:bg-blue-500/15 dark:text-blue-300">
-                          <highlight.icon className="h-5 w-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3" />
-                        </div>
-                        <h4 className="mb-1 font-semibold text-slate-950 dark:text-white">{highlight.title}</h4>
-                        <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{highlight.description}</p>
-                      </div>
-                    ))}
+                    {highlights.map((highlight, index) => {
+                      const HighlightWrapper = (highlight as any).url ? "a" : "div";
+                      const highlightProps = (highlight as any).url
+                        ? {
+                            href: (highlight as any).url,
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            className: "group relative rounded-2xl border border-slate-200/50 bg-slate-50/40 p-5 text-left transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/20 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 dark:border-white/5 dark:bg-slate-800/30 dark:hover:bg-slate-800/80 block cursor-pointer"
+                          }
+                        : {
+                            className: "group relative rounded-2xl border border-slate-200/50 bg-slate-50/40 p-5 text-left transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/20 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 dark:border-white/5 dark:bg-slate-800/30 dark:hover:bg-slate-800/80"
+                          };
+                      return (
+                        <HighlightWrapper key={highlight.title} {...highlightProps}>
+                          <div className="mb-3.5 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-500 dark:bg-blue-500/15 dark:text-blue-300">
+                            <highlight.icon className="h-5 w-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3" />
+                          </div>
+                          <h4 className="mb-1 font-semibold text-slate-950 dark:text-white">{highlight.title}</h4>
+                          <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{highlight.description}</p>
+                        </HighlightWrapper>
+                      );
+                    })}
                   </motion.div>
                 )}
 

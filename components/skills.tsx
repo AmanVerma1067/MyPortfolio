@@ -14,6 +14,7 @@ import { VscAzure } from "react-icons/vsc"
 import { FaJava, FaCuttlefish, FaBrain, FaNetworkWired, FaServer, FaLock } from "react-icons/fa"
 import { BiNetworkChart, BiCodeAlt } from "react-icons/bi"
 import { TbApi, TbBrandOauth } from "react-icons/tb"
+import { CodolioIcon } from "./custom-icons"
 
 const skillCategories = [
   {
@@ -37,7 +38,7 @@ const skillCategories = [
     color: "from-blue-400 to-indigo-500",
     glowColor: "rgba(99,102,241,0.25)",
     skills: [
-      { name: "Data Structures & Algorithms", icon: BiCodeAlt },
+      { name: "Data Structures & Algorithms", icon: CodolioIcon, url: "https://codolio.com/profile/aman1067" },
       { name: "Operating Systems", icon: FaServer },
       { name: "DBMS", icon: Database },
       { name: "OOP", icon: Code },
@@ -176,67 +177,83 @@ export default function Skills() {
 
               {/* Skill Tags */}
               <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                    transition={{
-                      duration: 0.4,
-                      delay: 0.3 + categoryIndex * 0.08 + skillIndex * 0.04,
-                    }}
-                    className="flex cursor-default items-center gap-1.5 rounded-xl border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-700 transition-all duration-300 hover:border-transparent hover:text-white hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:text-slate-200 group/skill"
-                    style={
-                      {
-                        "--tw-gradient-from": category.color.includes("cyan")
-                          ? "#22d3ee"
-                          : category.color.includes("blue")
-                            ? "#60a5fa"
-                            : category.color.includes("violet")
-                              ? "#8b5cf6"
-                              : category.color.includes("emerald")
-                                ? "#34d399"
-                                : category.color.includes("orange")
-                                  ? "#fb923c"
-                                  : "#fb7185",
-                      } as React.CSSProperties
-                    }
-                    onMouseEnter={(e) => {
-                      const el = e.currentTarget
-                      el.style.background = `linear-gradient(135deg, ${category.color
-                        .replace("from-", "")
-                        .replace("to-", "")
-                        .split(" ")
-                        .map((c) => {
-                          const colorMap: Record<string, string> = {
-                            "cyan-400": "#22d3ee",
-                            "blue-500": "#3b82f6",
-                            "blue-400": "#60a5fa",
-                            "indigo-500": "#6366f1",
-                            "violet-500": "#8b5cf6",
-                            "purple-600": "#9333ea",
-                            "emerald-400": "#34d399",
-                            "teal-500": "#14b8a6",
-                            "orange-400": "#fb923c",
-                            "amber-500": "#f59e0b",
-                            "rose-400": "#fb7185",
-                            "pink-500": "#ec4899",
-                          }
-                          return colorMap[c] || c
-                        })
-                        .join(", ")})`
-                      el.style.boxShadow = `0 4px 15px ${category.glowColor}`
-                    }}
-                    onMouseLeave={(e) => {
-                      const el = e.currentTarget
-                      el.style.background = ""
-                      el.style.boxShadow = ""
-                    }}
-                  >
-                    <skill.icon className="w-4 h-4 text-slate-500 dark:text-slate-400 group-hover/skill:text-white transition-colors" />
-                    <span>{skill.name}</span>
-                  </motion.div>
-                ))}
+                {category.skills.map((skill, skillIndex) => {
+                  const skillUrl = (skill as any).url;
+                  const Wrapper = skillUrl ? motion.a : motion.div;
+                  const wrapperProps = skillUrl
+                    ? {
+                        href: skillUrl,
+                        target: "_blank",
+                        rel: "noopener noreferrer",
+                        className: "flex cursor-pointer items-center gap-1.5 rounded-xl border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-700 transition-all duration-300 hover:border-transparent hover:text-white hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:text-slate-200 group/skill",
+                        title: `Showcase DSA profile on Codolio`
+                      }
+                    : {
+                        className: "flex cursor-default items-center gap-1.5 rounded-xl border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-700 transition-all duration-300 hover:border-transparent hover:text-white hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:text-slate-200 group/skill"
+                      };
+
+                  return (
+                    <Wrapper
+                      key={skill.name}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                      transition={{
+                        duration: 0.4,
+                        delay: 0.3 + categoryIndex * 0.08 + skillIndex * 0.04,
+                      }}
+                      style={
+                        {
+                          "--tw-gradient-from": category.color.includes("cyan")
+                            ? "#22d3ee"
+                            : category.color.includes("blue")
+                              ? "#60a5fa"
+                              : category.color.includes("violet")
+                                ? "#8b5cf6"
+                                : category.color.includes("emerald")
+                                  ? "#34d399"
+                                  : category.color.includes("orange")
+                                    ? "#fb923c"
+                                    : "#fb7185",
+                        } as React.CSSProperties
+                      }
+                      onMouseEnter={(e) => {
+                        const el = e.currentTarget
+                        el.style.background = `linear-gradient(135deg, ${category.color
+                          .replace("from-", "")
+                          .replace("to-", "")
+                          .split(" ")
+                          .map((c) => {
+                            const colorMap: Record<string, string> = {
+                              "cyan-400": "#22d3ee",
+                              "blue-500": "#3b82f6",
+                              "blue-400": "#60a5fa",
+                              "indigo-500": "#6366f1",
+                              "violet-500": "#8b5cf6",
+                              "purple-600": "#9333ea",
+                              "emerald-400": "#34d399",
+                              "teal-500": "#14b8a6",
+                              "orange-400": "#fb923c",
+                              "amber-500": "#f59e0b",
+                              "rose-400": "#fb7185",
+                              "pink-500": "#ec4899",
+                            }
+                            return colorMap[c] || c
+                          })
+                          .join(", ")})`
+                        el.style.boxShadow = `0 4px 15px ${category.glowColor}`
+                      }}
+                      onMouseLeave={(e) => {
+                        const el = e.currentTarget
+                        el.style.background = ""
+                        el.style.boxShadow = ""
+                      }}
+                      {...wrapperProps}
+                    >
+                      <skill.icon className="w-4 h-4 text-slate-500 dark:text-slate-400 group-hover/skill:text-white transition-colors" />
+                      <span>{skill.name}</span>
+                    </Wrapper>
+                  );
+                })}
               </div>
             </motion.div>
           ))}
