@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Poppins } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import LoadingScreen from "@/components/loading-screen"
@@ -8,17 +8,50 @@ import "./globals.css"
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 })
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f172a" },
+  ],
+}
+
 export const metadata: Metadata = {
-  title: "Portfolio - Aman Verma",
-  description: "Full Stack Developer Portfolio - Aman Verma",
-  keywords: ["Full Stack", "developer", "react", "nextjs", "portfolio"],
-  authors: [{ name: "Aman Verma" }],
-  viewport: "width=device-width, initial-scale=1",
-  generator: "Next.js",
+  title: "Aman Verma | AI/ML Systems & Full-Stack Developer",
+  description:
+    "Portfolio of Aman Verma — Final-year B.Tech at JIIT Noida (8.6 CGPA). Specializing in AI/ML Systems, LLM Orchestration, Scalable Backend Architectures, and Full-Stack Web/Mobile Engineering. LeetCode Knight (2094 Peak), 1st Place BitBox 5.0 Hackathon.",
+  keywords: [
+    "Aman Verma",
+    "AI/ML Engineer",
+    "Machine Learning",
+    "LLM Systems",
+    "Full Stack Developer",
+    "FastAPI",
+    "Next.js",
+    "React",
+    "Python",
+    "PyTorch",
+    "LangChain",
+    "Flutter",
+    "LeetCode Knight",
+    "JIIT",
+    "Portfolio",
+  ],
+  authors: [{ name: "Aman Verma", url: "https://aman1067.xyz" }],
+  creator: "Aman Verma",
+  openGraph: {
+    title: "Aman Verma | AI/ML Systems & Full-Stack Developer",
+    description:
+      "B.Tech in ECE at JIIT Noida (8.6 CGPA). AI/ML Systems, LLM Orchestration, Backend Architecture, and Full-Stack Engineering.",
+    url: "https://aman1067.xyz",
+    siteName: "Aman Verma Portfolio",
+    type: "website",
+  },
 }
 
 export default function RootLayout({

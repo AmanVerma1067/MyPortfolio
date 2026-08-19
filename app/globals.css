@@ -68,23 +68,39 @@
   }
 
   .section-kicker {
-    @apply mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-blue-500 dark:text-blue-400;
+    @apply mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-blue-600 dark:text-blue-400;
   }
 
   .section-title {
-    @apply text-3xl font-bold tracking-tight text-slate-950 dark:text-white lg:text-5xl;
+    @apply text-3xl font-extrabold tracking-tight text-slate-950 dark:text-white lg:text-5xl;
   }
 
   .section-subtitle {
-    @apply mx-auto max-w-2xl text-slate-600 dark:text-slate-400;
+    @apply mx-auto max-w-2xl text-slate-600 dark:text-slate-400 text-base md:text-lg leading-relaxed;
   }
 
   .glass-card {
-    @apply rounded-2xl border border-slate-200 bg-white/80 shadow-sm backdrop-blur-xl transition-all duration-300 dark:border-white/10 dark:bg-slate-900/70;
+    @apply rounded-2xl border border-slate-200/80 bg-white/80 shadow-sm backdrop-blur-xl transition-all duration-300 dark:border-white/10 dark:bg-slate-900/70;
   }
 
   .primary-btn {
-    @apply rounded-2xl bg-blue-600 px-8 py-4 font-semibold text-white shadow-lg shadow-blue-600/20 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700;
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl bg-blue-600 px-8 py-4 font-semibold text-white shadow-lg shadow-blue-600/25 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-blue-600/40 active:translate-y-0;
+  }
+
+  .secondary-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white/80 px-6 py-3.5 font-semibold text-slate-900 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:text-blue-600 dark:border-white/10 dark:bg-slate-900/60 dark:text-white dark:hover:text-blue-300;
+  }
+
+  .badge-winner {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs font-bold text-amber-700 dark:text-amber-300;
+  }
+
+  .badge-finalist {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 px-3 py-1 text-xs font-bold text-purple-700 dark:text-purple-300;
+  }
+
+  .badge-tech {
+    @apply rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700 dark:bg-white/5 dark:text-slate-300 border border-slate-200/60 dark:border-white/5 transition-colors;
   }
 
   .surface-section {
@@ -92,6 +108,6 @@
   }
 
   .surface-section-alt {
-    @apply bg-slate-50 dark:bg-slate-950;
+    @apply bg-slate-50/80 dark:bg-slate-950;
   }
 }
