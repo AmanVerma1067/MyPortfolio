@@ -41,10 +41,10 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="mx-auto inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-white/70 px-4 py-2 text-sm font-medium text-slate-700 shadow-sm backdrop-blur dark:bg-slate-900/50 dark:text-slate-300 lg:mx-0"
+                className="mx-auto inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-white/80 px-4 py-2 text-sm font-medium text-slate-700 shadow-sm backdrop-blur dark:bg-slate-900/60 dark:text-slate-200 lg:mx-0"
               >
-                <span className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_16px_rgba(16,185,129,0.75)]" />
-                Open to SDE Opportunities
+                <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.9)] animate-pulse" />
+                Open to SDE & AI/ML Opportunities
               </motion.div>
 
               <motion.h1
@@ -53,7 +53,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.8 }}
                 className="text-5xl font-extrabold tracking-tight text-slate-950 dark:text-white md:text-7xl"
               >
-                Aman <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">Verma</span>
+                Aman <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-500 bg-clip-text text-transparent dark:from-blue-400 dark:via-cyan-300 dark:to-indigo-300">Verma</span>
               </motion.h1>
 
               {/* Typing animation */}
@@ -61,31 +61,34 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.0 }}
-                className="flex h-8 items-center justify-center gap-3 text-xl font-semibold text-slate-700 dark:text-slate-200 md:text-2xl lg:justify-start"
+                className="flex h-8 items-center justify-center gap-3 text-lg font-semibold text-slate-700 dark:text-slate-200 sm:text-xl md:text-2xl lg:justify-start"
               >
-                <span className="hidden h-0.5 w-10 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 sm:inline-block" />
-                <Typewriter
-                  words={[
-                    "Software Engineer 💻",
-                    "Full Stack Developer 🚀",
-                    "AI/ML Enthusiast 🤖",
-                  ]}
-                  loop={0}
-                  cursor
-                  cursorStyle="|"
-                  typeSpeed={70}
-                  deleteSpeed={50}
-                  delaySpeed={2000}
-                />
+                <span className="hidden h-0.5 w-8 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 sm:inline-block" />
+                <span className="whitespace-nowrap inline-block">
+                  <Typewriter
+                    words={[
+                      "Software Engineer 💻",
+                      "Full Stack Developer 🚀",
+                      "AI/ML Engineer 🤖",
+                      "Competitive Programmer ⚡",
+                    ]}
+                    loop={0}
+                    cursor
+                    cursorStyle="|"
+                    typeSpeed={70}
+                    deleteSpeed={50}
+                    delaySpeed={2000}
+                  />
+                </span>
               </motion.h2>
 
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.2 }}
-                className="mx-auto max-w-xl text-base leading-8 text-slate-600 dark:text-slate-400 md:text-lg lg:mx-0"
+                className="mx-auto max-w-xl text-base leading-relaxed text-slate-600 dark:text-slate-300 md:text-lg lg:mx-0"
               >
-                Final year B.Tech student focused on Software Engineering, Full-Stack Development, AI/ML, and scalable backend systems. I build production-ready applications with clean architecture and practical user impact.
+                Final-year B.Tech student in ECE at Jaypee Institute of Information Technology. Focused on building production-ready AI/ML pipelines, prompt-chaining state machines, scalable backend microservices, and high-performance full-stack systems.
               </motion.p>
             </div>
 
@@ -93,31 +96,31 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.4 }}
-              className="flex flex-wrap justify-center lg:justify-start gap-4"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1"
             >
               <a
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-2xl bg-blue-600 px-6 py-3 font-semibold text-white shadow-lg shadow-blue-600/20 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700"
+                className="inline-flex items-center gap-2 rounded-2xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 active:translate-y-0"
               >
-                <FileText size={18} />
-                View Resume
+                <FileText size={17} />
+                <span>View Resume</span>
               </a>
               <a
                 href="/resume.pdf"
                 download="Aman_Verma_Resume.pdf"
-                className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-white/70 px-6 py-3 font-semibold text-slate-900 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:text-blue-600 dark:border-white/10 dark:bg-slate-900/60 dark:text-white dark:hover:text-blue-300"
+                className="inline-flex items-center gap-2 rounded-2xl border border-slate-200/90 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:text-blue-600 dark:border-white/10 dark:bg-slate-900/70 dark:text-white dark:hover:text-blue-300 active:translate-y-0"
               >
-                <Download size={18} />
-                Download Resume
+                <Download size={17} />
+                <span>Download Resume</span>
               </a>
               <button
                 onClick={handleContactClick}
-                className="inline-flex items-center gap-2 rounded-2xl border border-blue-500/60 px-6 py-3 font-semibold text-blue-600 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-500 hover:text-white dark:text-blue-300 dark:hover:text-white"
+                className="inline-flex items-center gap-2 rounded-2xl border border-blue-500/60 bg-blue-50/50 px-5 py-3 text-sm font-semibold text-blue-600 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-600 hover:text-white dark:bg-blue-950/30 dark:text-blue-300 dark:hover:bg-blue-600 dark:hover:text-white active:translate-y-0"
               >
-                <Mail size={18} />
-                Contact Me
+                <Mail size={17} />
+                <span>Contact Me</span>
               </button>
             </motion.div>
 

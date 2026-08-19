@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
-import { Code, Globe, Brain, Server, Database, BookOpen } from "lucide-react"
+import { Code, Globe, Brain, Server, Database, BookOpen, Terminal, Sparkles, Cpu, Layers, Workflow, Eye, Shield, Boxes, Activity } from "lucide-react"
 import { 
   SiCplusplus, SiPython, SiPhp, SiJavascript, SiTypescript, 
   SiReact, SiNextdotjs, SiFlutter, SiStreamlit, SiTailwindcss, SiHtml5, SiCss3,
@@ -11,7 +11,7 @@ import {
   SiMongodb, SiPostgresql, SiMysql, SiAmazon, SiDocker, SiGit, SiLinux, SiPostman, SiPytorch, SiTensorflow
 } from "react-icons/si"
 import { VscAzure } from "react-icons/vsc"
-import { FaJava, FaCuttlefish, FaBrain, FaNetworkWired, FaServer, FaLock } from "react-icons/fa"
+import { FaCuttlefish, FaBrain, FaNetworkWired, FaServer, FaLock, FaRobot, FaTerminal, FaLayerGroup } from "react-icons/fa"
 import { BiNetworkChart, BiCodeAlt } from "react-icons/bi"
 import { TbApi, TbBrandOauth } from "react-icons/tb"
 import { CodolioIcon } from "./custom-icons"
@@ -19,95 +19,97 @@ import { CodolioIcon } from "./custom-icons"
 const skillCategories = [
   {
     icon: Code,
-    title: "Languages",
+    title: "Languages & Querying",
     color: "from-cyan-400 to-blue-500",
     glowColor: "rgba(56,189,248,0.25)",
     skills: [
-      { name: "C", icon: FaCuttlefish },
-      { name: "C++", icon: SiCplusplus },
       { name: "Python", icon: SiPython },
-      { name: "PHP", icon: SiPhp },
+      { name: "C++", icon: SiCplusplus },
+      { name: "C", icon: FaCuttlefish },
       { name: "JavaScript", icon: SiJavascript },
       { name: "TypeScript", icon: SiTypescript },
+      { name: "PHP", icon: SiPhp },
       { name: "SQL", icon: Database },
+      { name: "Bash", icon: FaTerminal },
     ],
   },
   {
     icon: BookOpen,
-    title: "Core CS",
+    title: "Core CS & Algorithms",
     color: "from-blue-400 to-indigo-500",
     glowColor: "rgba(99,102,241,0.25)",
     skills: [
-      { name: "Data Structures & Algorithms", icon: CodolioIcon, url: "https://codolio.com/profile/aman1067" },
+      { name: "DSA (2094 Peak)", icon: CodolioIcon, url: "https://codolio.com/profile/aman1067" },
+      { name: "System Design", icon: BiNetworkChart },
       { name: "Operating Systems", icon: FaServer },
-      { name: "DBMS", icon: Database },
+      { name: "DBMS & SQL", icon: Database },
       { name: "OOP", icon: Code },
       { name: "Computer Networks", icon: FaNetworkWired },
-      { name: "System Design", icon: BiNetworkChart },
+      { name: "PHPUnit & Postman", icon: SiPostman },
     ],
   },
   {
     icon: Brain,
-    title: "AI / ML",
+    title: "AI & Machine Learning",
     color: "from-violet-500 to-purple-600",
     glowColor: "rgba(139,92,246,0.25)",
     skills: [
-      { name: "Machine Learning", icon: FaBrain },
-      { name: "NLP", icon: Brain },
-      { name: "Deep Learning", icon: FaBrain },
-      { name: "LangChain", icon: Code },
-      { name: "Hugging Face", icon: Brain },
-      { name: "RAG", icon: Database },
       { name: "PyTorch", icon: SiPytorch },
       { name: "TensorFlow", icon: SiTensorflow },
+      { name: "Scikit-Learn", icon: Cpu },
+      { name: "Deep Learning", icon: FaBrain },
+      { name: "Computer Vision", icon: Eye },
+      { name: "OpenCV", icon: Eye },
+      { name: "YOLOv5 (Edge CV)", icon: Eye },
+      { name: "ResNet-50", icon: FaLayerGroup },
+    ],
+  },
+  {
+    icon: Sparkles,
+    title: "LLMs & GenAI Systems",
+    color: "from-fuchsia-500 to-purple-600",
+    glowColor: "rgba(217,70,239,0.25)",
+    skills: [
+      { name: "Gemini API", icon: Sparkles },
+      { name: "LangChain", icon: Layers },
+      { name: "CrewAI (Multi-Agent)", icon: FaRobot },
+      { name: "RAG Pipelines", icon: Database },
+      { name: "Vector Search", icon: Database },
+      { name: "spaCy (NER)", icon: Brain },
+      { name: "Hugging Face", icon: Brain },
+      { name: "Prompt Engineering", icon: Code },
+    ],
+  },
+  {
+    icon: Server,
+    title: "Backend & Distributed APIs",
+    color: "from-orange-400 to-amber-500",
+    glowColor: "rgba(251,146,60,0.25)",
+    skills: [
+      { name: "FastAPI", icon: SiFastapi },
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "Express.js", icon: SiExpress },
+      { name: "Flask", icon: SiFlask },
+      { name: "REST APIs", icon: TbApi },
+      { name: "WebSocket / Socket.IO", icon: BiNetworkChart },
+      { name: "JWT Auth & RBAC", icon: FaLock },
+      { name: "Time-Series Telemetry", icon: Activity },
     ],
   },
   {
     icon: Globe,
-    title: "Frontend / Mobile",
+    title: "Frontend, Cloud & DevOps",
     color: "from-emerald-400 to-teal-500",
     glowColor: "rgba(52,211,153,0.25)",
     skills: [
       { name: "React.js", icon: SiReact },
       { name: "Next.js", icon: SiNextdotjs },
-      { name: "Flutter", icon: SiFlutter },
-      { name: "Streamlit", icon: SiStreamlit },
+      { name: "Flutter (Offline)", icon: SiFlutter },
       { name: "Tailwind CSS", icon: SiTailwindcss },
-      { name: "HTML5", icon: SiHtml5 },
-      { name: "CSS3", icon: SiCss3 },
-    ],
-  },
-  {
-    icon: Server,
-    title: "Backend / APIs",
-    color: "from-orange-400 to-amber-500",
-    glowColor: "rgba(251,146,60,0.25)",
-    skills: [
-      { name: "Node.js", icon: SiNodedotjs },
-      { name: "Express.js", icon: SiExpress },
-      { name: "Flask", icon: SiFlask },
-      { name: "FastAPI", icon: SiFastapi },
-      { name: "REST APIs", icon: TbApi },
-      { name: "WebSocket", icon: BiNetworkChart },
-      { name: "JWT Authentication", icon: FaLock },
-    ],
-  },
-  {
-    icon: Database,
-    title: "Databases, Cloud & DevOps",
-    color: "from-rose-400 to-pink-500",
-    glowColor: "rgba(251,113,133,0.25)",
-    skills: [
-      { name: "MongoDB", icon: SiMongodb },
+      { name: "MongoDB Atlas", icon: SiMongodb },
       { name: "PostgreSQL", icon: SiPostgresql },
-      { name: "MySQL", icon: SiMysql },
-      { name: "AWS", icon: SiAmazon },
-      { name: "Azure", icon: VscAzure },
       { name: "Docker", icon: SiDocker },
-      { name: "Git", icon: SiGit },
-      { name: "Linux", icon: SiLinux },
-      { name: "CI/CD", icon: Code },
-      { name: "Postman", icon: SiPostman },
+      { name: "Git & Linux", icon: SiGit },
     ],
   },
 ]

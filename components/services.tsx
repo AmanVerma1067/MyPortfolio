@@ -3,61 +3,61 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
-import { Brain, Swords, Code, Smartphone, Check, ArrowRight } from "lucide-react"
+import { Brain, Swords, Code, Smartphone, Server, Check, ArrowRight } from "lucide-react"
 
 const services = [
   {
     icon: Brain,
-    title: "AI/ML & Generative AI",
+    title: "AI/ML & LLM Systems",
     description:
-      "Building intelligent systems with deep learning, NLP, and computer vision — from RAG pipelines to end-to-end ML deployments.",
+      "Building production-grade intelligent systems with deep learning, NLP, and computer vision — from adaptive prompt-chaining state machines to RAG multi-agent pipelines and edge CV.",
     features: [
-      "RAG Pipelines & LLM Integration",
-      "Deep Learning (PyTorch, TensorFlow)",
-      "Computer Vision & NLP",
-      "ML Model Deployment (Azure, Docker)",
+      "Prompt-Chaining State Machines (Gemini API)",
+      "Deep Learning (PyTorch, ResNet-50)",
+      "RAG & Multi-Agent Workflows (LangChain, CrewAI)",
+      "Edge CV on Raspberry Pi (YOLOv5, OpenCV)",
     ],
     gradient: "from-violet-500 to-purple-600",
     hoverGradient: "group-hover:from-violet-600 group-hover:to-purple-700",
   },
   {
-    icon: Swords,
-    title: "Competitive Programming",
+    icon: Server,
+    title: "Backend & Distributed Systems",
     description:
-      "Solving complex algorithmic challenges with optimized C++ solutions — active on Codeforces and CodeChef.",
+      "Engineering high-scale RESTful APIs, multi-tenant databases, schema architectures, and real-time WebSocket communication pipelines.",
     features: [
-      "Data Structures & Algorithms",
-      "Optimized C++ Solutions",
-      "Contest Problem Solving",
-      "Complexity Analysis & Optimization",
-    ],
-    gradient: "from-amber-500 to-orange-500",
-    hoverGradient: "group-hover:from-amber-600 group-hover:to-orange-600",
-  },
-  {
-    icon: Code,
-    title: "Full Stack Development",
-    description:
-      "Crafting high-performance web applications with modern frameworks, REST APIs, and real-time features.",
-    features: [
-      "React / Next.js Frontend",
-      "Node.js, Flask & FastAPI Backends",
-      "Database Design (SQL & NoSQL)",
-      "WebSocket & Real-time Systems",
+      "High-Performance REST APIs (FastAPI, Node.js, PHP)",
+      "Multi-Tenant RBAC & Data Isolation",
+      "Time-Series Telemetry (PostgreSQL, MongoDB Atlas)",
+      "Real-Time WebSocket & Socket.IO Systems",
     ],
     gradient: "from-cyan-500 to-blue-500",
     hoverGradient: "group-hover:from-cyan-600 group-hover:to-blue-600",
   },
   {
-    icon: Smartphone,
-    title: "Mobile App Development",
+    icon: Swords,
+    title: "Competitive Programming",
     description:
-      "Building scalable cross-platform mobile apps with Flutter, real-time data pipelines, and native-feel UIs.",
+      "Solving complex algorithmic challenges with optimized C++ data structures — LeetCode Knight (Peak Rating: 2094) with 1,000+ problems solved.",
     features: [
-      "Flutter / Dart Development",
-      "Firebase & API Integration",
-      "Real-time Updates & Notifications",
-      "Cross-platform UI Engineering",
+      "Data Structures & Algorithmic Optimization",
+      "Optimized C++ Contest Problem Solving",
+      "Graph Theory, Dynamic Programming & Minimax",
+      "Time & Space Complexity Benchmarking",
+    ],
+    gradient: "from-amber-500 to-orange-500",
+    hoverGradient: "group-hover:from-amber-600 group-hover:to-orange-600",
+  },
+  {
+    icon: Smartphone,
+    title: "Full-Stack & Mobile Development",
+    description:
+      "Crafting responsive web applications with Next.js & React, and shipping cross-platform offline-first mobile apps in Flutter across Android, iOS, and Web.",
+    features: [
+      "Modern React & Next.js Web Applications",
+      "Cross-Platform Flutter Apps (Android & iOS)",
+      "Offline-First Local Cache Architectures",
+      "Secure Auth (JWT, OAuth) & Cloud Integrations",
     ],
     gradient: "from-emerald-500 to-teal-500",
     hoverGradient: "group-hover:from-emerald-600 group-hover:to-teal-600",

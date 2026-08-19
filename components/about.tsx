@@ -2,44 +2,60 @@
  
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { Award, Brain, Code, GraduationCap, Smartphone, Swords, Trophy } from "lucide-react"
+import { Award, Brain, GraduationCap, Server, Sparkles, Trophy, Cpu, Flame } from "lucide-react"
 import { CodolioIcon } from "./custom-icons"
 
 const highlights = [
   {
     icon: Brain,
-    title: "AI/ML & Deep Learning",
-    description: "LangChain, Hugging Face, NLP",
+    title: "AI/ML & LLM Systems",
+    description: "Gemini API, LangChain, CrewAI, RAG, PyTorch, spaCy",
   },
   {
     icon: CodolioIcon,
     title: "LeetCode Knight",
-    description: "1000+ solved · Peak 2094 · View Stats",
+    description: "1000+ Solved · Peak 2094 · 250-day streak",
     url: "https://codolio.com/profile/aman1067",
   },
   {
-    icon: Code,
-    title: "Full-Stack Engineer",
-    description: "Next.js, Node.js, Scalable APIs",
+    icon: Server,
+    title: "Backend Engineering",
+    description: "FastAPI, Node.js, MongoDB Atlas, PostgreSQL, RBAC",
   },
   {
-    icon: Smartphone,
-    title: "Mobile App Developer",
-    description: "Offline-first Flutter apps",
+    icon: Trophy,
+    title: "Hackathon Winner",
+    description: "1st Place BitBox 5.0 (GDG) · Innovate 3.0 Finalist",
   },
 ]
 
 const achievements = [
-  "1st Place — BitBox 5.0 (GDG Noida)",
-  "Finalist — Innovate 3.0 National Hackathon",
-  "LeetCode Knight (Peak Rating: 2094)",
-  "Academic Letter of Appreciation, JIIT",
+  {
+    icon: Trophy,
+    title: "1st Place — BitBox 5.0 Hackathon",
+    desc: "Google Developer Groups (GDG) · Won for SahYatri IoT Edge CV pipeline",
+  },
+  {
+    icon: Award,
+    title: "Finalist — Innovate 3.0 Hackathon",
+    desc: "Top finalist team for Drive-Sure AI/IoT vehicle telematics system",
+  },
+  {
+    icon: Flame,
+    title: "LeetCode Knight (Peak: 2094)",
+    desc: "1,000+ DSA problems solved across LeetCode & Codeforces (Top 2.5%)",
+  },
+  {
+    icon: GraduationCap,
+    title: "Academic Distinction (JIIT)",
+    desc: "Awarded Letter of Appreciation for top coursework standing (8.6 CGPA)",
+  },
 ]
 
 const stats = [
   { value: "2094", label: "LeetCode Peak", url: "https://codolio.com/profile/aman1067" },
   { value: "8.6", label: "B.Tech CGPA" },
-  { value: "1st", label: "Hackathon Rank" },
+  { value: "1st", label: "BitBox 5.0 Rank" },
   { value: "1000+", label: "Problems Solved", url: "https://codolio.com/profile/aman1067" },
 ]
 
@@ -79,20 +95,20 @@ export default function About() {
             className="text-center lg:text-left space-y-8"
           >
             <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-blue-500 dark:text-blue-400">
+              <p className="section-kicker">
                 My Intro
               </p>
-              <h2 className="text-3xl font-bold tracking-tight text-slate-950 dark:text-white lg:text-5xl">
+              <h2 className="section-title">
                 About Me
               </h2>
             </div>
 
-            <div className="space-y-5 text-base leading-8 text-slate-600 dark:text-slate-400 md:text-lg">
+            <div className="space-y-4 text-base leading-relaxed text-slate-600 dark:text-slate-300 md:text-lg">
               <p className="text-balance">
-                I'm a final-year B.Tech student at Jaypee Institute of Information Technology, specializing in Electronics & Communication Engineering with a strong focus on Software Engineering, Full-Stack Web architectures, and AI/ML pipelines.
+                I'm a final-year B.Tech student in Electronics & Communication Engineering at <span className="font-semibold text-slate-900 dark:text-white">Jaypee Institute of Information Technology</span>, specializing in AI/ML systems, LLM orchestration, and scalable full-stack backend architectures.
               </p>
               <p className="text-balance">
-                My projects, including the award-winning <span className="font-semibold text-blue-500 dark:text-blue-400">SahYatri</span> public transport analytics system, reflect my interest in practical engineering: clean APIs, optimized data flows, and scalable system components.
+                From developing adaptive prompt-chaining state machines and fine-tuning transfer learning classifiers to deploying YOLOv5n edge computer vision on Raspberry Pi (<span className="font-semibold text-blue-600 dark:text-blue-400">SahYatri</span>), I engineer high-performance software for real-world impact.
               </p>
             </div>
 
@@ -105,10 +121,10 @@ export default function About() {
                       href: stat.url,
                       target: "_blank",
                       rel: "noopener noreferrer",
-                      className: "rounded-2xl border border-slate-200/60 bg-slate-50/50 p-4 text-center dark:border-white/5 dark:bg-slate-800/30 hover:-translate-y-0.5 hover:border-blue-500/30 transition-all duration-300 cursor-pointer block"
+                      className: "rounded-2xl border border-slate-200/80 bg-slate-50/70 p-4 text-center dark:border-white/10 dark:bg-slate-800/40 hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 cursor-pointer block"
                     }
                   : {
-                      className: "rounded-2xl border border-slate-200/60 bg-slate-50/50 p-4 text-center dark:border-white/5 dark:bg-slate-800/30"
+                      className: "rounded-2xl border border-slate-200/80 bg-slate-50/70 p-4 text-center dark:border-white/10 dark:bg-slate-800/40"
                     };
                 return (
                   <StatWrapper
@@ -118,10 +134,10 @@ export default function About() {
                     transition={{ duration: 0.6, delay: 0.3 + idx * 0.1 }}
                     {...statProps}
                   >
-                    <p className="text-2xl md:text-3xl font-black bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent dark:from-blue-400 dark:to-cyan-400">
+                    <p className="text-2xl md:text-3xl font-black bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 bg-clip-text text-transparent dark:from-blue-400 dark:via-cyan-300 dark:to-indigo-300">
                       {stat.value}
                     </p>
-                    <p className="text-xs font-semibold text-slate-500 dark:text-slate-500 mt-1 uppercase tracking-wider">
+                    <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-wider">
                       {stat.label}
                     </p>
                   </StatWrapper>
@@ -132,7 +148,7 @@ export default function About() {
             <div className="pt-2">
               <button
                 onClick={handleContactClick}
-                className="rounded-2xl bg-blue-600 px-8 py-4 font-semibold text-white shadow-lg shadow-blue-600/20 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-blue-700/30"
+                className="primary-btn"
               >
                 Let's Collaborate
               </button>
@@ -146,15 +162,15 @@ export default function About() {
             transition={{ duration: 1, delay: 0.4 }}
             className="w-full"
           >
-            <div className="relative rounded-[2.5rem] border border-slate-200/80 bg-white/70 p-6 shadow-2xl shadow-slate-900/10 backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/60 dark:shadow-black/25 md:p-8 min-h-[480px] flex flex-col justify-between">
+            <div className="relative rounded-[2.5rem] border border-slate-200/80 bg-white/80 p-6 shadow-2xl shadow-slate-900/10 backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/70 dark:shadow-black/30 md:p-7 flex flex-col justify-between">
               
               {/* Tab Bar */}
-              <div className="flex gap-1.5 p-1 mb-8 rounded-2xl bg-slate-100/70 dark:bg-slate-800/50 border border-slate-200/40 dark:border-white/5 relative z-20">
+              <div className="flex gap-1.5 p-1 mb-6 rounded-2xl bg-slate-100/80 dark:bg-slate-800/60 border border-slate-200/50 dark:border-white/5 relative z-20">
                 {tabs.map((tab) => (
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`relative flex-1 py-3 text-sm font-semibold rounded-xl transition-all duration-300 ${
+                    className={`relative flex-1 py-2.5 text-xs sm:text-sm font-semibold rounded-xl transition-all duration-300 ${
                       activeTab === tab.id
                         ? "text-blue-600 dark:text-blue-400"
                         : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
@@ -163,7 +179,7 @@ export default function About() {
                     {activeTab === tab.id && (
                       <motion.div
                         layoutId="activeAboutTab"
-                        className="absolute inset-0 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200/50 dark:border-white/5 -z-10"
+                        className="absolute inset-0 rounded-xl bg-white dark:bg-slate-900 shadow-sm border border-slate-200/60 dark:border-white/10 -z-10"
                         transition={{ type: "spring", stiffness: 380, damping: 30 }}
                       />
                     )}
@@ -173,35 +189,35 @@ export default function About() {
               </div>
 
               {/* Tab Contents */}
-              <div className="flex-1 flex flex-col justify-center">
+              <div className="w-full">
                 
                 {/* Expertise Tab */}
                 {activeTab === "expertise" && (
                   <motion.div
-                    initial={{ opacity: 0, y: 15 }}
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4 }}
-                    className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+                    transition={{ duration: 0.3 }}
+                    className="grid grid-cols-1 sm:grid-cols-2 gap-3.5"
                   >
-                    {highlights.map((highlight, index) => {
+                    {highlights.map((highlight) => {
                       const HighlightWrapper = (highlight as any).url ? "a" : "div";
                       const highlightProps = (highlight as any).url
                         ? {
                             href: (highlight as any).url,
                             target: "_blank",
                             rel: "noopener noreferrer",
-                            className: "group relative rounded-2xl border border-slate-200/50 bg-slate-50/40 p-5 text-left transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/20 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 dark:border-white/5 dark:bg-slate-800/30 dark:hover:bg-slate-800/80 block cursor-pointer"
+                            className: "group relative rounded-2xl border border-slate-200/60 bg-slate-50/50 p-4 text-left transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/30 hover:bg-white hover:shadow-lg hover:shadow-blue-500/10 dark:border-white/5 dark:bg-slate-800/40 dark:hover:bg-slate-800/80 block cursor-pointer"
                           }
                         : {
-                            className: "group relative rounded-2xl border border-slate-200/50 bg-slate-50/40 p-5 text-left transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/20 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 dark:border-white/5 dark:bg-slate-800/30 dark:hover:bg-slate-800/80"
+                            className: "group relative rounded-2xl border border-slate-200/60 bg-slate-50/50 p-4 text-left transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/30 hover:bg-white hover:shadow-lg hover:shadow-blue-500/10 dark:border-white/5 dark:bg-slate-800/40 dark:hover:bg-slate-800/80"
                           };
                       return (
                         <HighlightWrapper key={highlight.title} {...highlightProps}>
-                          <div className="mb-3.5 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-500 dark:bg-blue-500/15 dark:text-blue-300">
-                            <highlight.icon className="h-5 w-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3" />
+                          <div className="mb-2.5 inline-flex h-9 w-9 items-center justify-center rounded-xl bg-blue-500/10 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300">
+                            <highlight.icon className="h-4.5 w-4.5 transition-transform duration-300 group-hover:scale-110" />
                           </div>
-                          <h4 className="mb-1 font-semibold text-slate-950 dark:text-white">{highlight.title}</h4>
-                          <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{highlight.description}</p>
+                          <h4 className="text-sm font-bold text-slate-950 dark:text-white">{highlight.title}</h4>
+                          <p className="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">{highlight.description}</p>
                         </HighlightWrapper>
                       );
                     })}
@@ -211,52 +227,51 @@ export default function About() {
                 {/* Education Tab */}
                 {activeTab === "education" && (
                   <motion.div
-                    initial={{ opacity: 0, y: 15 }}
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4 }}
-                    className="space-y-5"
+                    transition={{ duration: 0.3 }}
+                    className="space-y-3.5"
                   >
-                    <div className="rounded-2xl border border-slate-200/50 bg-slate-50/40 p-5 dark:border-white/5 dark:bg-slate-800/30">
-                      <div className="flex items-center gap-3.5 mb-4">
-                        <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-500 dark:text-blue-300">
+                    <div className="rounded-2xl border border-slate-200/60 bg-slate-50/50 p-5 dark:border-white/5 dark:bg-slate-800/40">
+                      <div className="flex items-center gap-3 mb-2.5">
+                        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-500/10 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300">
                           <GraduationCap className="h-5 w-5" />
                         </span>
                         <div>
-                          <h4 className="font-bold text-slate-950 dark:text-white leading-snug">
+                          <h4 className="text-sm md:text-base font-bold text-slate-950 dark:text-white leading-snug">
                             Jaypee Institute of Information Technology
                           </h4>
-                          <p className="text-xs text-slate-500 dark:text-slate-400">2023 – 2027 · Noida, India</p>
+                          <p className="text-xs text-slate-500 dark:text-slate-400">Aug 2023 – May 2027 · Noida, India</p>
                         </div>
                       </div>
-                      <p className="text-sm text-slate-700 dark:text-slate-300 mt-2">
+                      
+                      <p className="text-xs md:text-sm font-medium text-slate-700 dark:text-slate-300">
                         B.Tech in Electronics & Communication Engineering
                       </p>
-                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                        Specialization in Computer Science
-                      </p>
-                      <div className="mt-4 inline-flex items-center gap-2 rounded-xl bg-blue-500/10 px-3.5 py-1.5 text-xs md:text-sm font-bold text-blue-600 dark:text-blue-300">
-                        <span className="h-2 w-2 rounded-full bg-blue-500 dark:bg-blue-400" />
-                        CGPA: 8.6 / 10
+                      
+                      <div className="mt-3 flex flex-wrap items-center gap-2">
+                        <div className="inline-flex items-center gap-1.5 rounded-xl bg-blue-500/10 px-3 py-1 text-xs font-bold text-blue-600 dark:bg-blue-500/20 dark:text-blue-300">
+                          <span className="h-2 w-2 rounded-full bg-blue-500" />
+                          CGPA: 8.6 / 10
+                        </div>
+                        <div className="inline-flex items-center gap-1.5 rounded-xl bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-300">
+                          <Award className="h-3.5 w-3.5" />
+                          Academic Letter of Appreciation
+                        </div>
                       </div>
                     </div>
 
-                    <div className="rounded-2xl border border-slate-200/50 bg-slate-50/40 p-5 dark:border-white/5 dark:bg-slate-800/30">
-                      <div className="flex items-center gap-3 mb-3.5">
-                        <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-500 dark:text-blue-300">
-                          <Award className="h-5 w-5" />
-                        </span>
-                        <h4 className="font-bold text-slate-950 dark:text-white">Areas of Focus</h4>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        <span className="rounded-full bg-blue-500/5 dark:bg-blue-500/10 border border-blue-500/10 px-3.5 py-1.5 text-xs font-semibold text-blue-600 dark:text-blue-300">
-                          LangChain & Hugging Face GenAI
-                        </span>
-                        <span className="rounded-full bg-blue-500/5 dark:bg-blue-500/10 border border-blue-500/10 px-3.5 py-1.5 text-xs font-semibold text-blue-600 dark:text-blue-300">
-                          Data Science, ML & NLP
-                        </span>
-                        <span className="rounded-full bg-blue-500/5 dark:bg-blue-500/10 border border-blue-500/10 px-3.5 py-1.5 text-xs font-semibold text-blue-600 dark:text-blue-300">
-                          Algorithms & optimization
-                        </span>
+                    <div className="rounded-2xl border border-slate-200/60 bg-slate-50/50 p-4 dark:border-white/5 dark:bg-slate-800/40">
+                      <h4 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-2.5">
+                        Core Academic Focus
+                      </h4>
+                      <div className="flex flex-wrap gap-1.5">
+                        <span className="badge-tech text-xs">AI/ML Systems</span>
+                        <span className="badge-tech text-xs">Data Structures & Algorithms</span>
+                        <span className="badge-tech text-xs">Operating Systems</span>
+                        <span className="badge-tech text-xs">DBMS & SQL</span>
+                        <span className="badge-tech text-xs">System Design</span>
+                        <span className="badge-tech text-xs">Computer Networks</span>
                       </div>
                     </div>
                   </motion.div>
@@ -265,32 +280,25 @@ export default function About() {
                 {/* Achievements Tab */}
                 {activeTab === "achievements" && (
                   <motion.div
-                    initial={{ opacity: 0, y: 15 }}
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4 }}
-                    className="space-y-3.5"
+                    transition={{ duration: 0.3 }}
+                    className="grid grid-cols-1 sm:grid-cols-2 gap-3"
                   >
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-500 dark:text-blue-300">
-                        <Trophy className="h-5 w-5" />
-                      </span>
-                      <h3 className="text-lg font-bold text-slate-950 dark:text-white">Key Achievements</h3>
-                    </div>
-                    <div className="grid gap-3">
-                      {achievements.map((achievement, index) => (
-                        <div 
-                          key={index} 
-                          className="flex items-center gap-3.5 rounded-xl border border-slate-200/50 bg-slate-50/40 p-4 transition-all duration-300 hover:bg-white dark:border-white/5 dark:bg-slate-800/30 dark:hover:bg-slate-800/80"
-                        >
-                          <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-400">
-                            <svg className="h-4.5 w-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                            </svg>
-                          </div>
-                          <span className="text-xs md:text-sm font-semibold text-slate-700 dark:text-slate-300">{achievement}</span>
+                    {achievements.map((item, index) => (
+                      <div 
+                        key={index} 
+                        className="flex items-start gap-3 rounded-2xl border border-slate-200/60 bg-slate-50/50 p-3.5 transition-all duration-300 hover:bg-white dark:border-white/5 dark:bg-slate-800/40 dark:hover:bg-slate-800/80"
+                      >
+                        <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-xl bg-blue-500/10 text-blue-600 dark:bg-blue-500/20 dark:text-blue-300 mt-0.5">
+                          <item.icon className="h-4 w-4" />
                         </div>
-                      ))}
-                    </div>
+                        <div>
+                          <h5 className="text-xs md:text-sm font-bold text-slate-900 dark:text-white leading-snug">{item.title}</h5>
+                          <p className="text-[11px] text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
                   </motion.div>
                 )}
 
@@ -303,3 +311,4 @@ export default function About() {
     </section>
   )
 }
+
