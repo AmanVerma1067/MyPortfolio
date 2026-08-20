@@ -45,7 +45,7 @@ const skillCategories = [
       { name: "DBMS & SQL", icon: Database },
       { name: "OOP", icon: Code },
       { name: "Computer Networks", icon: FaNetworkWired },
-      { name: "PHPUnit & Postman", icon: SiPostman },
+      //{ name: "PHPUnit & Postman", icon: SiPostman },
     ],
   },
   {
@@ -93,7 +93,7 @@ const skillCategories = [
       { name: "REST APIs", icon: TbApi },
       { name: "WebSocket / Socket.IO", icon: BiNetworkChart },
       { name: "JWT Auth & RBAC", icon: FaLock },
-      { name: "Time-Series Telemetry", icon: Activity },
+      // { name: "Time-Series Telemetry", icon: Activity },
     ],
   },
   {
